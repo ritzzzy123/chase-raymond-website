@@ -79,6 +79,7 @@ header.site-header{
   padding:16px 32px;
   max-width:var(--maxw);
   margin:0 auto;
+  gap:16px;
 }
 .nav-brand{display:flex;align-items:center;gap:14px;}
 .nav-brand img{height:36px;width:auto;}
@@ -103,11 +104,31 @@ nav.nav-links a{
   border-bottom:2px solid transparent;
 }
 nav.nav-links a:hover, nav.nav-links a.active{border-bottom-color:var(--red);color:var(--red);}
-.nav-cta{display:flex;align-items:center;gap:18px;}
-.nav-phone{font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;}
+.nav-cta{display:flex;align-items:center;gap:18px;flex-shrink:0;}
+.nav-phone{
+  font-family:'Poppins',sans-serif;
+  font-weight:700;
+  font-size:14px;
+  white-space:nowrap;
+  padding-bottom:4px;
+  border-bottom:2px solid transparent;
+  line-height:1.3;
+}
+.nav-phone:hover{border-bottom-color:var(--red);color:var(--red);}
 .menu-toggle{display:none;background:none;border:none;font-size:26px;cursor:pointer;}
 
-@media (max-width:860px){
+@media (max-width:1180px){
+  nav.nav-links{gap:16px;}
+  nav.nav-links a{font-size:12px;}
+  .nav-cta{gap:12px;}
+  .nav-brand .name{font-size:14px;}
+}
+
+@media (max-width:1040px){
+  .nav-phone{display:none;}
+}
+
+@media (max-width:940px){
   nav.nav-links{
     position:absolute;top:100%;left:0;right:0;
     background:var(--white);
@@ -119,7 +140,6 @@ nav.nav-links a:hover, nav.nav-links a.active{border-bottom-color:var(--red);col
   }
   nav.nav-links.open{display:flex;}
   .menu-toggle{display:block;}
-  .nav-phone{display:none;}
 }
 
 /* ---------- Hero / Offset Block ---------- */
@@ -150,6 +170,12 @@ nav.nav-links a:hover, nav.nav-links a.active{border-bottom-color:var(--red);col
 
 @media (max-width:640px){
   .hero .panel h1{font-size:38px;}
+}
+
+.hero-photo{
+  background:
+    linear-gradient(180deg, rgba(13,13,13,0.5), rgba(13,13,13,0.72)),
+    url('../assets/London%20Skyline.jpg') center/cover no-repeat;
 }
 
 /* ---------- Section shell ---------- */
@@ -298,4 +324,72 @@ footer.site-footer a:hover{color:var(--red);}
 footer.site-footer .legal{
   margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.15);
   font-size:11px;color:rgba(255,255,255,0.5);text-align:center;
+}
+
+/* ---------- Social icons ---------- */
+.social-row{display:flex;gap:12px;margin-top:14px;}
+.social-row a{
+  width:34px;height:34px;
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid rgba(255,255,255,0.25);
+  color:rgba(255,255,255,0.85);
+  font-family:'Poppins',sans-serif;font-weight:700;font-size:12px;
+  text-transform:uppercase;
+}
+.social-row a:hover{border-color:var(--red);color:var(--red);background:rgba(255,255,255,0.05);}
+
+/* ---------- Tabs (listings toggle) ---------- */
+.tab-row{display:flex;gap:10px;margin-bottom:28px;flex-wrap:wrap;}
+.tab-btn{
+  font-family:'Poppins',sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;
+  letter-spacing:0.03em;
+  background:var(--white);border:1px solid var(--line);color:var(--black);
+  padding:10px 20px;cursor:pointer;
+}
+.tab-btn.active{background:var(--black);color:var(--white);border-color:var(--black);}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+
+/* ---------- Process steps ---------- */
+.process-list{counter-reset:step;display:grid;gap:20px;margin-top:8px;}
+.process-step{
+  display:grid;grid-template-columns:56px 1fr;gap:20px;
+  background:var(--white);border:1px solid var(--line);padding:22px;
+}
+.process-step .step-num{
+  counter-increment:step;
+  font-family:'Poppins',sans-serif;font-weight:800;font-size:22px;color:var(--red);
+  display:flex;align-items:flex-start;justify-content:center;
+}
+.process-step .step-num::before{content:counter(step);}
+.process-step h3{font-size:15px;text-transform:none;font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:6px;}
+.process-step p{font-size:14px;color:var(--grey);margin:0;}
+
+/* ---------- Tip cards ---------- */
+.tip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
+.tip-card{background:var(--white);border:1px solid var(--line);border-left:4px solid var(--red);padding:20px;}
+.tip-card h3{font-size:14px;text-transform:none;font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:8px;}
+.tip-card p{font-size:14px;color:var(--grey);margin:0;}
+
+/* ---------- Lead capture form ---------- */
+.lead-box{background:var(--black);color:var(--white);padding:40px;display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:center;}
+@media (max-width:760px){.lead-box{grid-template-columns:1fr;}}
+.lead-box h2{font-size:24px;color:var(--white);}
+.lead-box p{font-size:14px;color:rgba(255,255,255,0.75);margin-top:10px;}
+.lead-form{display:flex;gap:10px;flex-wrap:wrap;}
+.lead-form input[type="email"]{
+  flex:1;min-width:200px;padding:14px 16px;border:1px solid rgba(255,255,255,0.3);
+  background:rgba(255,255,255,0.05);color:var(--white);font-family:'Inter',sans-serif;font-size:14px;
+}
+.lead-form input[type="email"]::placeholder{color:rgba(255,255,255,0.5);}
+.lead-form .btn-primary{white-space:nowrap;}
+.lead-note{font-size:11px;color:rgba(255,255,255,0.5);margin-top:10px;}
+
+/* ---------- Scroll reveal ---------- */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease, transform 0.6s ease;}
+.reveal.in-view{opacity:1;transform:translateY(0);}
+.reveal-stagger.in-view .reveal-item{opacity:1;transform:translateY(0);}
+.reveal-item{opacity:0;transform:translateY(20px);transition:opacity 0.5s ease, transform 0.5s ease;}
+@media (prefers-reduced-motion: reduce){
+  .reveal, .reveal-item{opacity:1;transform:none;transition:none;}
 }
