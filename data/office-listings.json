@@ -1,0 +1,44 @@
+{
+  "_readme": "PLACEHOLDER DATA. These represent listings from other agents at Keller Williams Lifestyles Realty, not Chase's own. Replace with a real feed or manually curated list once your office can share listing data with you (check with your office admin/broker about pulling other agents' active listings for a shared marketing page). Same field shape as data/listings.json.",
+  "listings": [
+    {
+      "id": "office-1",
+      "status": "New Listing",
+      "price": "$679,900",
+      "address": "1420 Riverbend Rd",
+      "city": "London, ON",
+      "beds": 3,
+      "baths": 2,
+      "sqft": "1,620",
+      "mlsNumber": "OFFICE001",
+      "agent": "Brenda Davidson",
+      "url": "#"
+    },
+    {
+      "id": "office-2",
+      "status": "Open House",
+      "price": "$1,050,000",
+      "address": "56 Blackacres Blvd",
+      "city": "London, ON",
+      "beds": 5,
+      "baths": 4,
+      "sqft": "3,100",
+      "mlsNumber": "OFFICE002",
+      "agent": "Marcus Chen",
+      "url": "#"
+    },
+    {
+      "id": "office-3",
+      "status": "Just Sold",
+      "price": "$438,000",
+      "address": "902 Adelaide St N",
+      "city": "London, ON",
+      "beds": 2,
+      "baths": 1,
+      "sqft": "890",
+      "mlsNumber": "OFFICE003",
+      "agent": "Priya Nair",
+      "url": "#"
+    }
+  ]
+}
