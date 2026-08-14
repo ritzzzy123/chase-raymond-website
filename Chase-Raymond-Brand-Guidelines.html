@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chase Raymond,Brand Guidelines</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#CE011F;
+    --red-dark:#A50019;
+    --black:#0D0D0D;
+    --white:#FFFFFF;
+    --offwhite:#F6F3EF;
+    --grey:#6B6B6B;
+    --line:#E7E2DB;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    color:var(--black);
+    background:var(--offwhite);
+    line-height:1.5;
+  }
+  h1,h2,h3,.headline{
+    font-family:'Poppins',sans-serif;
+    font-weight:800;
+    text-transform:uppercase;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .eyebrow{
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    font-size:13px;
+    color:var(--red);
+  }
+  .page{max-width:1000px;margin:0 auto;padding:0 40px;}
+  section{padding:64px 0;border-bottom:1px solid var(--line);}
+  section:last-child{border-bottom:none;}
+
+  /* Cover */
+  .cover{
+    background:var(--red);
+    color:var(--white);
+    padding:100px 0 80px;
+    position:relative;
+    overflow:hidden;
+  }
+  .cover .page{position:relative;z-index:2;}
+  .cover .panel{
+    background:var(--white);
+    color:var(--red);
+    display:inline-block;
+    padding:20px 32px;
+    margin-bottom:28px;
+  }
+  .cover .panel h1{font-size:56px;line-height:0.95;}
+  .cover .eyebrow{color:var(--white);opacity:0.85;}
+  .cover .tagline{
+    font-family:'Poppins',sans-serif;
+    font-weight:600;
+    font-size:20px;
+    margin-top:18px;
+    color:var(--white);
+  }
+  .cover .meta{
+    margin-top:40px;
+    font-size:14px;
+    color:rgba(255,255,255,0.75);
+    border-top:1px solid rgba(255,255,255,0.3);
+    padding-top:16px;
+    display:flex;
+    gap:32px;
+  }
+
+  h2.section-title{font-size:32px;margin-bottom:8px;}
+  .section-sub{color:var(--grey);font-size:15px;margin-bottom:36px;max-width:620px;}
+
+  /* Positioning */
+  .positioning-statement{
+    font-family:'Poppins',sans-serif;
+    font-weight:600;
+    font-size:22px;
+    text-transform:none;
+    line-height:1.5;
+    max-width:760px;
+    color:var(--black);
+  }
+  .positioning-statement span{color:var(--red);}
+
+  /* Colors */
+  .swatch-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .swatch{border:1px solid var(--line);background:var(--white);}
+  .swatch .block{height:110px;}
+  .swatch .info{padding:14px 16px;}
+  .swatch .name{font-weight:700;font-size:14px;margin-bottom:8px;}
+  .swatch .codes{font-size:12px;color:var(--grey);line-height:1.7;}
+
+  /* Typography */
+  .type-sample{margin-bottom:34px;}
+  .type-sample .label{font-size:12px;color:var(--grey);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px;}
+  .type-headline{font-family:'Poppins',sans-serif;font-weight:800;font-size:46px;text-transform:uppercase;line-height:1;}
+  .type-eyebrow-demo{font-family:'Inter',sans-serif;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:14px;color:var(--red);}
+  .type-body-demo{font-family:'Inter',sans-serif;font-size:16px;max-width:600px;color:var(--black);}
+  .type-rules{margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:16px;font-size:14px;color:var(--grey);}
+  .type-rules div{background:var(--white);border:1px solid var(--line);padding:16px 18px;}
+  .type-rules b{color:var(--black);display:block;margin-bottom:4px;font-family:'Poppins',sans-serif;font-size:13px;text-transform:uppercase;}
+
+  /* Motif mockup */
+  .motif-demo{
+    background:var(--red);
+    padding:48px;
+    position:relative;
+    color:var(--white);
+    margin-top:20px;
+  }
+  .motif-demo .white-panel{
+    background:var(--white);
+    color:var(--red);
+    display:inline-block;
+    padding:14px 26px;
+    margin-bottom:22px;
+  }
+  .motif-demo .white-panel h3{font-size:38px;}
+  .motif-demo .rule{width:36px;height:3px;background:var(--white);margin:14px 0;}
+  .motif-demo .name{font-family:'Poppins',sans-serif;font-weight:700;font-size:22px;text-transform:uppercase;}
+  .motif-demo .contact{font-family:'Poppins',sans-serif;font-size:15px;margin-top:6px;opacity:0.9;}
+  .motif-steps{margin-top:28px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .motif-steps div{background:var(--white);border:1px solid var(--line);padding:16px;font-size:13px;color:var(--grey);}
+  .motif-steps b{display:block;color:var(--red);font-family:'Poppins',sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;}
+
+  /* Logo usage */
+  .logo-rules{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  .rule-card{background:var(--white);border:1px solid var(--line);padding:22px;}
+  .rule-card.do{border-left:4px solid var(--red);}
+  .rule-card.dont{border-left:4px solid var(--black);opacity:0.85;}
+  .rule-card .tag{font-family:'Poppins',sans-serif;font-weight:800;font-size:12px;letter-spacing:0.1em;margin-bottom:10px;}
+  .rule-card.do .tag{color:var(--red);}
+  .rule-card.dont .tag{color:var(--black);}
+  .rule-card ul{margin:0;padding-left:18px;font-size:14px;color:var(--black);}
+  .rule-card li{margin-bottom:6px;}
+
+  /* Voice */
+  .voice-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px;}
+  .voice-word{background:var(--red);color:var(--white);text-align:center;padding:22px 10px;font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;font-size:15px;}
+  .voice-examples div{background:var(--white);border:1px solid var(--line);padding:14px 18px;margin-bottom:10px;font-size:14px;}
+  .voice-examples b{color:var(--red);}
+
+  /* Roadmap */
+  .roadmap{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .road-card{background:var(--white);border:1px solid var(--line);padding:20px;}
+  .road-card .status{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:4px 10px;display:inline-block;margin-bottom:14px;}
+  .road-card.done .status{background:var(--red);color:var(--white);}
+  .road-card.next .status{background:var(--black);color:var(--white);}
+  .road-card.later .status{background:var(--line);color:var(--grey);}
+  .road-card h3{font-size:16px;text-transform:none;font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:8px;}
+  .road-card p{font-size:13px;color:var(--grey);margin:0;}
+
+  footer{padding:40px 0;text-align:center;font-size:12px;color:var(--grey);}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="page">
+    <div class="eyebrow">Brand Guidelines · v1.0</div>
+    <div class="panel"><h1>Chase<br>Raymond</h1></div>
+    <div class="tagline">Chasing Homes in London,REALTOR®, Keller Williams Lifestyles Realty</div>
+    <div class="meta">
+      <span>Prepared August 2026</span>
+      <span>Applies to: print, digital, social, signage</span>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+
+  <section>
+    <div class="eyebrow">01 · Positioning</div>
+    <h2 class="section-title">Who this brand is</h2>
+    <p class="section-sub">The foundation everything else in this guide gets built on.</p>
+    <p class="positioning-statement">
+      Chase Raymond is a <span>bold, modern</span> real estate brand built inside Keller Williams' trusted red-and-white identity.
+      It's built on <span>confidence over clutter</span>: strong red fields, an offset white panel, bold flush-left type.
+      No stock templates, no generic sign layouts. The brand should feel like a <span>local, personal, standout</span> presence,
+      not a franchise default.
+    </p>
+  </section>
+
+  <section>
+    <div class="eyebrow">02 · Color Palette</div>
+    <h2 class="section-title">Colors</h2>
+    <p class="section-sub">Locked to Keller Williams' official brand red plus true black and white. No off-brand colors,this keeps every asset compliant with KW co-branding rules while still standing out.</p>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="block" style="background:var(--red);"></div>
+        <div class="info">
+          <div class="name">KW Red,Primary</div>
+          <div class="codes">HEX #CE011F<br>RGB 206 · 1 · 31<br>CMYK 0 · 100 · 66 · 13<br>Pantone 200 C</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="block" style="background:var(--white);border-bottom:1px solid var(--line);"></div>
+        <div class="info">
+          <div class="name">Pure White</div>
+          <div class="codes">HEX #FFFFFF<br>RGB 255 · 255 · 255<br>CMYK 0 · 0 · 0 · 0</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="block" style="background:var(--black);"></div>
+        <div class="info">
+          <div class="name">Ink Black</div>
+          <div class="codes">HEX #0D0D0D<br>RGB 13 · 13 · 13<br>CMYK 0 · 0 · 0 · 95</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="block" style="background:var(--offwhite);border-bottom:1px solid var(--line);"></div>
+        <div class="info">
+          <div class="name">Warm Off-White</div>
+          <div class="codes">HEX #F6F3EF<br>Use for web/social backgrounds<br>Never for print signage</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">03 · Typography</div>
+    <h2 class="section-title">Type system</h2>
+    <p class="section-sub">Two fonts, used consistently everywhere: signs, cards, web, social.</p>
+
+    <div class="type-sample">
+      <div class="label">Headline,Poppins ExtraBold, all caps</div>
+      <div class="type-headline">For Sale</div>
+    </div>
+    <div class="type-sample">
+      <div class="label">Eyebrow / Label,Inter SemiBold, wide tracking, all caps</div>
+      <div class="type-eyebrow-demo">Realtor®</div>
+    </div>
+    <div class="type-sample">
+      <div class="label">Body / Contact info,Inter Regular</div>
+      <div class="type-body-demo">c: 519.854.8179 &nbsp;·&nbsp; chase@chasinghomesinldn.ca &nbsp;·&nbsp; chasinghomesinldn.ca</div>
+    </div>
+
+    <div class="type-rules">
+      <div><b>Headlines</b>Poppins 800, always uppercase, tight line-height, left-aligned. Reserved for "FOR SALE," name treatments, and section titles.</div>
+      <div><b>Eyebrow labels</b>Inter 600, 0.18em letter-spacing, uppercase, small size, always in KW Red. Used above names and section headers.</div>
+      <div><b>Body copy</b>Inter 400/500. Sentence case. Used for contact details, descriptions, captions.</div>
+      <div><b>Never do</b>No script fonts, no drop shadows, no stretched or condensed type, no centered paragraph text.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">04 · Signature Layout,"The Offset Block"</div>
+    <h2 class="section-title">The one move that makes this brand recognizable</h2>
+    <p class="section-sub">Every asset (sign, card, future social template) should use this same construction so it's instantly recognizable as yours before anyone reads a word.</p>
+
+    <div class="motif-demo">
+      <div class="white-panel"><h3>For Sale</h3></div>
+      <div class="rule"></div>
+      <div class="name">Chase Raymond</div>
+      <div class="contact">c: 519.854.8179 · chasinghomesinldn.ca</div>
+    </div>
+
+    <div class="motif-steps">
+      <div><b>1. Field</b>Solid KW Red fills the full canvas. No gradients, no photo backgrounds behind text.</div>
+      <div><b>2. Offset panel</b>A white rectangle holds the headline, placed off-center (left-aligned, never centered), bleeding off one edge.</div>
+      <div><b>3. Divider</b>A short white or red rule separates headline from name/contact block.</div>
+      <div><b>4. Hierarchy</b>Eyebrow label → Name → Contact, always in that order, always left-aligned, generous white space around it.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">05 · Logo Usage</div>
+    <h2 class="section-title">KW logo + personal name lockup</h2>
+    <p class="section-sub">The Keller Williams mark is licensed, not yours to alter,treat it as fixed. Your name lockup is the part you own.</p>
+    <div class="logo-rules">
+      <div class="rule-card do">
+        <div class="tag">Do</div>
+        <ul>
+          <li>Use the official KW logo file provided by your office, untouched</li>
+          <li>Keep clear space around the KW mark equal to the height of the "k"</li>
+          <li>Pair "REALTOR®" (eyebrow style) directly above "CHASE RAYMOND" (headline style)</li>
+          <li>Place the KW logo top-left or top-right corner, consistently across assets</li>
+        </ul>
+      </div>
+      <div class="rule-card dont">
+        <div class="tag">Don't</div>
+        <ul>
+          <li>Recolor, rotate, stretch, or add effects to the KW logo</li>
+          <li>Place the KW logo smaller than legibility allows (min ~0.5in height in print)</li>
+          <li>Crowd the logo with other text or graphics inside its clear space</li>
+          <li>Create a new "Chase Raymond" logo mark that competes visually with KW's</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">06 · Voice</div>
+    <h2 class="section-title">How the brand talks</h2>
+    <div class="voice-grid">
+      <div class="voice-word">Direct</div>
+      <div class="voice-word">Confident</div>
+      <div class="voice-word">Local</div>
+      <div class="voice-word">No Fluff</div>
+    </div>
+    <div class="voice-examples">
+      <div><b>On listings:</b> "Just hit the market. 3 bed, move-in ready, walk to downtown London. Won't last."</div>
+      <div><b>On sold posts:</b> "Sold over ask in 6 days. That's what happens when pricing strategy meets the right buyer."</div>
+      <div><b>Avoid:</b> generic realtor-speak like "stunning opportunity" or "won't want to miss this gem" with no specifics behind it.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">07 · Rollout Roadmap</div>
+    <h2 class="section-title">What's built, what's next</h2>
+    <div class="roadmap">
+      <div class="road-card done">
+        <div class="status">Done</div>
+        <h3>Business card</h3>
+        <p>Offset-block layout, red field, KW logo, photo. Approved for VistaPrint (Soft Touch, 16pt+).</p>
+      </div>
+      <div class="road-card done">
+        <div class="status">Done</div>
+        <h3>Yard signs</h3>
+        <p>24×36 vertical + horizontal "For Sale" signs, same system, MLS mark included.</p>
+      </div>
+      <div class="road-card done">
+        <div class="status">Done</div>
+        <h3>Brand guidelines</h3>
+        <p>This document. Reference for every asset going forward.</p>
+      </div>
+      <div class="road-card next">
+        <div class="status">Next</div>
+        <h3>Website</h3>
+        <p>Coded site in this brand system. Listings will start as manual/placeholder entries until your board issues DDF/API credentials,the site gets built ready to plug that feed in the moment you have them.</p>
+      </div>
+      <div class="road-card later">
+        <div class="status">Then</div>
+        <h3>Social template kit</h3>
+        <p>New Listing, Just Sold, Open House, Coming Soon, Price Drop, Testimonial,Instagram + Facebook sizes, all built on the offset-block system.</p>
+      </div>
+      <div class="road-card later">
+        <div class="status">Then</div>
+        <h3>Extended applications</h3>
+        <p>Email signature, listing flyers, story highlight covers,once the core kit is locked.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>Chase Raymond · REALTOR® · Keller Williams Lifestyles Realty, Brokerage · Independently Owned and Operated · Brand Guidelines v1.0</footer>
+
+</body>
+</html>

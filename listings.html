@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>London, Ontario Listings | Chase Raymond, REALTOR®</title>
+<meta name="description" content="Browse active listings, open houses, and recently sold homes in London, Ontario with REALTOR® Chase Raymond, Keller Williams Lifestyles Realty.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://chasinghomesinldn.ca/listings.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="London, Ontario Listings | Chase Raymond, REALTOR®">
+<meta property="og:description" content="Active listings, open houses, and recently sold homes in London, Ontario.">
+<meta property="og:url" content="https://chasinghomesinldn.ca/listings.html">
+<meta property="og:image" content="https://chasinghomesinldn.ca/assets/og-image.jpg">
+<meta property="og:locale" content="en_CA">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="London, Ontario Listings | Chase Raymond, REALTOR®">
+<meta name="twitter:image" content="https://chasinghomesinldn.ca/assets/og-image.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="assets/kw-logo-white.png" alt="Keller Williams" style="filter:invert(1) grayscale(1) brightness(0);">
+      <span class="name">Chase Raymond<span>REALTOR® · Chasing Homes in London</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="listings.html" class="active">Listings</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:5198548179" class="nav-phone">519.854.8179</a>
+      <a href="contact.html" class="btn btn-primary" style="padding:10px 20px;font-size:12px;">Contact</a>
+      <button class="menu-toggle">&#9776;</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" style="padding:60px 0 70px;">
+  <div class="wrap">
+    <div class="eyebrow">Active on the market</div>
+    <div class="panel"><h1>Listings</h1></div>
+    <p class="sub">New listings, open houses, and recent sold properties across London, ON.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="listings-notice">
+      <b>Sample data:</b> the properties below are placeholders so the layout and filtering can be reviewed. Once DDF/API credentials are issued by your board, this grid pulls from the live feed automatically, see /js/listings.js and README.md for the swap-in point.
+    </div>
+
+    <div style="display:flex;gap:12px;margin-bottom:32px;flex-wrap:wrap;">
+      <button class="btn btn-dark" data-filter="all">All</button>
+      <button class="btn" style="background:var(--white);border:1px solid var(--line);color:var(--black);" data-filter="New Listing">New Listings</button>
+      <button class="btn" style="background:var(--white);border:1px solid var(--line);color:var(--black);" data-filter="Open House">Open Houses</button>
+      <button class="btn" style="background:var(--white);border:1px solid var(--line);color:var(--black);" data-filter="Just Sold">Just Sold</button>
+    </div>
+
+    <div id="all-listings" class="listing-grid"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="col">
+      <h4>Chase Raymond</h4>
+      <a href="tel:5198548179">c: 519.854.8179</a>
+      <a href="mailto:chase@chasinghomesinldn.ca">chase@chasinghomesinldn.ca</a>
+      <a href="index.html">chasinghomesinldn.ca</a>
+    </div>
+    <div class="col">
+      <h4>Site</h4>
+      <a href="listings.html">Listings</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="col">
+      <h4>Brokerage</h4>
+      <a href="https://kwlifestyles.kw.com/" target="_blank" rel="noopener">Keller Williams Lifestyles Realty, Brokerage</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=509+Commissioners+Rd+W%2C+London%2C+ON+N6J+1Y5" target="_blank" rel="noopener">509 Commissioners Rd W, London, ON N6J 1Y5</a>
+      <span style="display:block;font-size:13px;margin-bottom:8px;">Independently owned and operated</span>
+    </div>
+  </div>
+  <div class="legal">&copy; 2026 Chase Raymond, REALTOR®, Keller Williams Lifestyles Realty, Brokerage. Independently owned and operated.</div>
+</footer>
+
+<script src="js/listings.js"></script>
+<script>
+  let allListingsData = [];
+
+  fetch('data/listings.json')
+    .then(res => res.json())
+    .then(data => {
+      allListingsData = data.listings || [];
+      renderFiltered('all');
+    });
+
+  function renderFiltered(filter) {
+    const container = document.querySelector('#all-listings');
+    const items = filter === 'all' ? allListingsData : allListingsData.filter(l => l.status === filter);
+    container.innerHTML = items.map(renderListingCard).join('') || `<p style="color:#6B6B6B;">No listings in this category right now.</p>`;
+  }
+
+  document.querySelectorAll('[data-filter]').forEach(btn => {
+    btn.addEventListener('click', () => renderFiltered(btn.dataset.filter));
+  });
+</script>
+</body>
+</html>
