@@ -56,6 +56,7 @@ function renderListingCard(listing) {
           <span>${listing.baths} ba</span>
           <span>${listing.sqft} sqft</span>
         </div>
+        ${listing.agent ? `<div class="meta" style="margin-top:4px;">Listed by ${listing.agent}</div>` : ""}
         <div class="cta"><a href="${listing.url}">View details &rarr;</a></div>
       </div>
     </div>
