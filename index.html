@@ -56,6 +56,8 @@
   "sameAs": [
     "https://www.instagram.com/REPLACE_WITH_HANDLE",
     "https://www.facebook.com/REPLACE_WITH_HANDLE",
+    "https://www.tiktok.com/@REPLACE_WITH_HANDLE",
+    "https://www.linkedin.com/in/REPLACE_WITH_HANDLE",
     "https://www.realtor.ca/REPLACE_WITH_PROFILE_URL",
     "https://www.google.com/maps/place/REPLACE_WITH_GOOGLE_BUSINESS_PROFILE_URL"
   ]
@@ -73,6 +75,8 @@
     <nav class="nav-links">
       <a href="index.html" class="active">Home</a>
       <a href="listings.html">Listings</a>
+      <a href="buying.html">Buying</a>
+      <a href="selling.html">Selling</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -84,7 +88,7 @@
   </div>
 </header>
 
-<section class="hero">
+<section class="hero hero-photo">
   <div class="wrap">
     <div class="eyebrow">REALTOR® · Keller Williams Lifestyles Realty</div>
     <div class="panel"><h1>Chasing<br>Homes<br>in London</h1></div>
@@ -96,22 +100,35 @@
   </div>
 </section>
 
-<section class="alt">
+<section class="alt reveal">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Featured</div>
       <h2>Current Listings</h2>
-      <p>A look at what's active right now. Full list on the Listings page.</p>
+      <p>My active listings, plus what's active across my office. Full list on the Listings page.</p>
     </div>
+
+    <div class="tab-row">
+      <button class="tab-btn active" data-tab="mine">My Listings</button>
+      <button class="tab-btn" data-tab="office">Office Listings</button>
+    </div>
+
     <div class="listings-notice"><b>Sample data:</b> these cards are placeholders until live MLS/DDF integration is connected. See README for setup.</div>
-    <div id="home-listings" class="listing-grid"></div>
+
+    <div class="tab-panel active" id="tab-mine">
+      <div id="home-listings" class="listing-grid"></div>
+    </div>
+    <div class="tab-panel" id="tab-office">
+      <div id="home-office-listings" class="listing-grid"></div>
+    </div>
+
     <div style="margin-top:32px;">
       <a href="listings.html" class="btn btn-dark">View All Listings</a>
     </div>
   </div>
 </section>
 
-<section class="stats">
+<section class="stats reveal">
   <div class="wrap">
     <div>
       <div class="num">London, ON</div>
@@ -132,7 +149,7 @@
   </div>
 </section>
 
-<section>
+<section class="reveal">
   <div class="wrap split">
     <img class="photo-block" src="assets/Photo(32of38).jpg" alt="Chase Raymond working with a client">
     <div>
@@ -144,7 +161,7 @@
   </div>
 </section>
 
-<section class="quote-block">
+<section class="quote-block reveal">
   <div class="wrap">
     <div class="panel"><h2>Just Sold</h2></div>
     <p>"Sold over ask in 6 days. That's what happens when pricing strategy meets the right buyer." Real results, not stock photo promises.</p>
@@ -158,10 +175,18 @@
       <a href="tel:5198548179">c: 519.854.8179</a>
       <a href="mailto:chase@chasinghomesinldn.ca">chase@chasinghomesinldn.ca</a>
       <a href="index.html">chasinghomesinldn.ca</a>
+      <div class="social-row">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="TikTok">TT</a>
+        <a href="#" aria-label="LinkedIn">LI</a>
+      </div>
     </div>
     <div class="col">
       <h4>Site</h4>
       <a href="listings.html">Listings</a>
+      <a href="buying.html">Buying</a>
+      <a href="selling.html">Selling</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </div>
@@ -176,6 +201,19 @@
 </footer>
 
 <script src="js/listings.js"></script>
-<script>loadListings('#home-listings', { limit: 3, dataPath: 'data/listings.json' });</script>
+<script src="js/animations.js"></script>
+<script>
+  loadListings('#home-listings', { limit: 3, dataPath: 'data/listings.json' });
+  loadListings('#home-office-listings', { limit: 3, dataPath: 'data/office-listings.json' });
+
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+</script>
 </body>
 </html>

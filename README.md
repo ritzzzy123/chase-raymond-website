@@ -4,14 +4,19 @@ Static site, no build step, no server required to run it. Brand system matches `
 
 ## File structure
 ```
-index.html        Home
-listings.html      Full listings grid with filters
-about.html         Bio page
-contact.html       Contact form + info
-css/style.css      Shared brand styles
-js/listings.js     Renders listing cards from data/listings.json
-data/listings.json Listings data (currently SAMPLE/placeholder)
-assets/            Logo + images, DROP YOUR LOGO + PHOTOS HERE
+index.html               Home
+listings.html            Full listings grid with filters
+buying.html               Buyer tips, process outline, buyer's guide download
+selling.html               Seller tips, process outline, seller's guide download
+about.html                Bio page
+contact.html               Contact form + info
+css/style.css              Shared brand styles
+js/listings.js             Renders listing cards from data/listings.json + office-listings.json
+js/animations.js           Scroll-in animations (fade/slide as you scroll)
+js/lead-form.js            Handles the buyer's/seller's guide email capture + download
+data/listings.json         Your listings data (currently SAMPLE/placeholder)
+data/office-listings.json  Office listings data (currently SAMPLE/placeholder)
+assets/                    Logo, photos, guide downloads
 ```
 
 ## 1. Before you go live, swap in real assets
@@ -27,6 +32,14 @@ assets/            Logo + images, DROP YOUR LOGO + PHOTOS HERE
 
 ## 3. Contact form
 The form on `contact.html` doesn't send anywhere yet, it's just markup. Fastest fix: sign up free at [formspree.io](https://formspree.io), get a form endpoint, paste it into the `action="..."` attribute on the `<form>` tag in `contact.html`. No backend needed.
+
+## 3b. Buyer's / Seller's guide lead capture (buying.html + selling.html)
+Same idea as the contact form. Right now, submitting your email on either page triggers an instant download of the guide (works today, no setup needed), but the email itself isn't being captured anywhere yet. To actually collect those emails:
+- Set up a Formspree endpoint (same as the contact form, can even be the same one).
+- On `buying.html` and `selling.html`, find `<form class="lead-form" data-endpoint="#" ...>` and replace `data-endpoint="#"` with your real Formspree URL, e.g. `data-endpoint="https://formspree.io/f/yourFormId"`.
+- The download still fires immediately either way, this just adds email capture on top.
+
+The seller's guide (`assets/sellers-guide.html`) has real drafted content. The buyer's guide (`assets/buyers-guide.html`) is placeholder content marked clearly at the top, upload your existing buyer's guide and it'll get rebranded into the same layout.
 
 ## 4. Listings, DDF / live MLS data
 This site can't legally pull live MLS data until your real estate board issues you DDF (Data Distribution Facility) access, usually via a signed agreement plus RESO Web API or RETS credentials, or through a paid feed provider (Repliers, Realtyna, Spark API, etc.) who resells access under your license. That's on your end to request through your board/brokerage, not something built into this site.
@@ -58,5 +71,11 @@ Until then, edit `data/listings.json` directly to update what shows on the site,
 
 None of this is optional if the goal is showing up on page one for your own name, structured data and meta tags help, but claimed GBP + realtor.ca + real backlinks + indexing is what actually moves the needle.
 
-## 6. What's next
+## 6. Office listings
+The "Office Listings" tab on the homepage pulls from `data/office-listings.json`, currently sample data for other agents at your office. There's no automatic feed for this (no board grants that kind of cross-agent access), so this needs to be manually updated, or check with your office admin about a shared internal listing export you could pull from periodically.
+
+## 7. Social links
+Icon links (IG / FB / TT / LI) are in place in every page footer, but all point to `#` placeholders right now, and the same placeholders sit in the `sameAs` array of the JSON-LD on `index.html`. Send over your actual Instagram, Facebook, TikTok, and LinkedIn URLs and they'll get wired in everywhere at once.
+
+## 8. What's next
 Social media template kit (New Listing, Just Sold, Open House, Coming Soon, Price Drop, Testimonial) is the next phase per the brand roadmap.
