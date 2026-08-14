@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Buying Process, Chase Raymond</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--red:#CE011F;--red-dark:#A50019;--black:#0D0D0D;--white:#FFFFFF;--offwhite:#F6F3EF;--grey:#6B6B6B;--line:#E7E2DB;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Inter',sans-serif;color:var(--black);background:var(--offwhite);line-height:1.6;}
+  h1,h2,h3,.headline{font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;margin:0;line-height:1;}
+  .eyebrow{font-family:'Inter',sans-serif;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;font-size:12px;color:var(--red);}
+  .page{max-width:820px;margin:0 auto;padding:0 32px;}
+  section{padding:52px 0;border-bottom:1px solid var(--line);}
+  section:last-child{border-bottom:none;}
+  h2{font-size:26px;margin-bottom:18px;}
+  p{color:var(--black);}
+  .muted{color:var(--grey);}
+
+  /* Cover */
+  .cover{background:var(--red);color:var(--white);padding:90px 0 60px;}
+  .cover .panel{background:var(--white);color:var(--red);display:inline-block;padding:20px 30px;margin-bottom:22px;}
+  .cover .panel h1{font-size:46px;line-height:1.05;}
+  .cover .tagline{font-family:'Poppins',sans-serif;font-weight:600;font-size:18px;margin:14px 0 26px;}
+  .cover .meta{font-size:14px;border-top:1px solid rgba(255,255,255,0.3);padding-top:16px;}
+
+  /* Sidebar label section (mirrors the vertical red bars in the original doc) */
+  .side-block{display:grid;grid-template-columns:64px 1fr;gap:28px;align-items:stretch;}
+  .side-bar{background:var(--red);color:var(--white);writing-mode:vertical-rl;transform:rotate(180deg);
+    font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;font-size:15px;letter-spacing:0.08em;
+    display:flex;align-items:center;justify-content:center;padding:20px 0;}
+  @media (max-width:600px){.side-block{grid-template-columns:1fr;}.side-bar{writing-mode:horizontal-tb;transform:none;padding:10px 16px;text-align:left;justify-content:flex-start;}}
+
+  /* Step list overview */
+  .step-overview{display:grid;grid-template-columns:1fr 1fr;gap:12px 32px;margin-top:12px;}
+  .step-overview div{display:flex;gap:12px;align-items:baseline;font-size:14px;}
+  .step-overview .n{font-family:'Poppins',sans-serif;font-weight:800;color:var(--red);min-width:20px;}
+  @media (max-width:560px){.step-overview{grid-template-columns:1fr;}}
+
+  /* Numbered steps within a step section */
+  .mini-step{display:grid;grid-template-columns:36px 1fr;gap:14px;margin-bottom:16px;}
+  .mini-step .n{font-family:'Poppins',sans-serif;font-weight:800;color:var(--red);font-size:18px;}
+  .mini-step h4{font-size:14px;font-family:'Poppins',sans-serif;font-weight:700;text-transform:none;margin:0 0 4px;}
+  .mini-step p{margin:0;font-size:14px;color:var(--grey);}
+
+  /* Two column */
+  .cols2{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  @media (max-width:600px){.cols2{grid-template-columns:1fr;}}
+  .cols2 h4{font-size:13px;font-family:'Poppins',sans-serif;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:0.03em;margin-bottom:8px;}
+  .cols2 p, .cols2 ul{font-size:14px;color:var(--grey);margin:0 0 14px;}
+  .cols2 ul{padding-left:18px;}
+
+  .tip{background:var(--white);border-left:4px solid var(--red);padding:14px 18px;margin-bottom:12px;font-size:14px;}
+  .tip b{display:block;font-family:'Poppins',sans-serif;font-size:13px;margin-bottom:3px;}
+
+  table{width:100%;border-collapse:collapse;font-size:13px;margin:14px 0;}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);}
+  th{font-family:'Poppins',sans-serif;font-weight:700;background:var(--white);text-transform:uppercase;font-size:11px;letter-spacing:0.04em;color:var(--red);}
+
+  .worksheet-row{display:flex;justify-content:space-between;border-bottom:1px dotted var(--line);padding:6px 0;font-size:13px;}
+  .worksheet-cat{font-family:'Poppins',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;color:var(--red);margin:16px 0 4px;}
+  .worksheet-total{display:flex;justify-content:space-between;border-top:2px solid var(--black);padding-top:10px;margin-top:10px;font-family:'Poppins',sans-serif;font-weight:700;}
+
+  .glossary-term{margin-bottom:16px;}
+  .glossary-term b{display:block;font-family:'Poppins',sans-serif;font-size:13px;color:var(--red);text-transform:uppercase;letter-spacing:0.02em;margin-bottom:3px;}
+  .glossary-term p{margin:0;font-size:13px;color:var(--grey);}
+  .glossary-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 32px;}
+  @media (max-width:600px){.glossary-grid{grid-template-columns:1fr;}}
+
+  .cta{background:var(--black);color:var(--white);padding:40px;text-align:left;}
+  .cta h2{color:var(--white);font-size:24px;}
+  .cta p{color:rgba(255,255,255,0.75);font-size:14px;}
+  .cta .contact-line{font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;margin-top:14px;color:var(--white);}
+
+  footer{padding:32px 0;text-align:center;font-size:12px;color:var(--grey);}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="page">
+    <div class="eyebrow">Buyer's Guide</div>
+    <div class="panel"><h1>The Buying<br>Process</h1></div>
+    <p class="tagline">Chasin' Your Dream Home</p>
+    <div class="meta">Chase Raymond, REALTOR&reg; &nbsp;·&nbsp; c: 519.854.8179 &nbsp;·&nbsp; chase@chasinghomesinldn.ca &nbsp;·&nbsp; chasinghomesinldn.ca<br>Keller Williams Lifestyles Realty, Brokerage. Independently owned and operated.</div>
+  </div>
+</div>
+
+<div class="page">
+
+  <section>
+    <div class="eyebrow">A Note From Chase</div>
+    <h2>Getting your home purchased</h2>
+    <p class="muted">I realize you have a choice when hiring a REALTOR&reg; to buy your home, and I want you to know I consider you the most important part of what I do.</p>
+    <p class="muted">From the beginning to the end of every purchase, I aim for a five-star experience for every client. Whether this is your first home or you've been through the process before, every situation gets an individualized approach.</p>
+    <p class="muted">I value the relationships I build through each sale and aim to be your trusted real estate advisor for years to come, I judge my success on how well I meet your needs.</p>
+    <p class="muted">Thank you for your consideration, I look forward to working with you.</p>
+    <p style="font-family:'Poppins',sans-serif;font-weight:700;">Chase Raymond<br><span style="font-family:'Inter',sans-serif;font-weight:400;font-size:13px;color:var(--grey);">c: 519.854.8179 &nbsp;·&nbsp; chase@chasinghomesinldn.ca</span></p>
+  </section>
+
+  <section>
+    <div class="eyebrow">7 Factors To Consider</div>
+    <h2>When buying a home</h2>
+    <p class="muted">Purchasing a home today is a far more complicated process than it used to be. Here are the seven factors worth investigating before you commit.</p>
+    <div class="mini-step"><div class="n">1</div><div><h4>Lifestyle</h4><p>The number one factor: finding you a home that suits your family's needs and budget.</p></div></div>
+    <div class="mini-step"><div class="n">2</div><div><h4>Your investment & equity building</h4><p>Your new home should also be a good investment, one that realizes a solid return over your time owning it. Some buyers prioritize lifestyle fit over equity, and that's valid too, but it's worth weighing both.</p></div></div>
+    <div class="mini-step"><div class="n">3</div><div><h4>Mortgage financing</h4><p>Very few buyers pay cash. It's not just about interest rate, prepayment privileges, doubling up on payments, and bi-weekly options can all change how fast you build equity.</p></div></div>
+    <div class="mini-step"><div class="n">4</div><div><h4>Site influences</h4><p>Future development, road systems, and other site factors that could affect your home's future value.</p></div></div>
+    <div class="mini-step"><div class="n">5</div><div><h4>Reputable builder</h4><p>For new builds, confirming a reputable builder protects your future resale value.</p></div></div>
+    <div class="mini-step"><div class="n">6</div><div><h4>Inspections</h4><p>Knowing what inspections a property needs, home, septic, well, electrical, roof, helps avoid costly surprises after closing.</p></div></div>
+    <div class="mini-step"><div class="n">7</div><div><h4>Hidden savings</h4><p>Mortgage payments and rent are often similar, but a portion of every mortgage payment reduces your principal. That's a built-in form of savings renting doesn't offer.</p></div></div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Overview</div>
+    <h2>The buying process, ten steps</h2>
+    <div class="step-overview">
+      <div><span class="n">1</span> Mortgage Pre-Approval</div>
+      <div><span class="n">6</span> Preparing an Offer</div>
+      <div><span class="n">2</span> Costs of Buying a Home</div>
+      <div><span class="n">7</span> Negotiating the Offer</div>
+      <div><span class="n">3</span> Buyer Consultation</div>
+      <div><span class="n">8</span> Satisfying the Conditions</div>
+      <div><span class="n">4</span> House Hunting</div>
+      <div><span class="n">9</span> Fulfilling the Conditions</div>
+      <div><span class="n">5</span> Pricing</div>
+      <div><span class="n">10</span> Celebrate</div>
+    </div>
+  </section>
+
+  <section class="side-block">
+    <div class="side-bar">Step 1</div>
+    <div>
+      <h2 style="font-size:22px;">Mortgage Pre-Approval</h2>
+      <div class="cols2">
+        <div>
+          <h4>Mortgage broker</h4>
+          <p>Not limited to one lender, brokers have access to the whole market and can find terms, conditions, and rates that best suit your needs.</p>
+          <h4>Financial institution</h4>
+          <p>Options are more limited since they only offer their own products, but a strong banking relationship can still make a real difference.</p>
+        </div>
+        <div>
+          <h4>Tips</h4>
+          <ul>
+            <li><b>Establish what you can afford</b> before house hunting starts, both the down payment and what you can carry monthly.</li>
+            <li><b>Hidden costs</b> beyond the down payment: inspections, appraisal fees, mortgage insurance, CMHC fees, legal fees, land transfer tax, title insurance.</li>
+            <li><b>Stay within your price range.</b> Most REALTORs won't show homes unless you're pre-approved, and it keeps comparisons apples to apples.</li>
+          </ul>
+        </div>
+      </div>
+      <h4 style="font-size:13px;font-family:'Poppins',sans-serif;font-weight:700;color:var(--red);text-transform:uppercase;margin-top:8px;">Documents needed for your mortgage approval</h4>
+      <p class="muted" style="font-size:14px;">Notice of Assessment from previous taxation year(s), Letter of Employment, T4s, Proof of Down Payment. Your mortgage broker will confirm anything else needed.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Pre-Qualification vs. Pre-Approval</div>
+    <h2>How much home can you afford?</h2>
+    <p class="muted">Pre-qualification defines the numbers. Pre-approval shows you the money.</p>
+    <div class="cols2">
+      <div><h4>Pre-qualification</h4><p>Establishes how much you can afford to borrow based on income and debt. It's not an assurance of approval.</p></div>
+      <div><h4>Pre-approval</h4><p>A detailed approach that gives you a firm decision on a home loan, and makes you a "cash buyer" in the seller's eyes, with real negotiating and bargaining power in a multiple-offer situation.</p></div>
+    </div>
+  </section>
+
+  <section class="side-block">
+    <div class="side-bar">Step 2</div>
+    <div>
+      <h2 style="font-size:22px;">Costs of Buying a Home</h2>
+      <h4 style="font-size:13px;font-family:'Poppins',sans-serif;font-weight:700;color:var(--red);text-transform:uppercase;">Down payment requirements</h4>
+      <ul style="font-size:14px;color:var(--grey);">
+        <li>Purchase price up to $500,000: minimum 5% down</li>
+        <li>$500,000 to $1 million: 5% of the first $500,000 plus 10% of the remaining balance</li>
+        <li>$1 million or more: minimum 20% down</li>
+      </ul>
+      <div class="cols2" style="margin-top:16px;">
+        <div>
+          <h4>Conventional vs. high ratio</h4>
+          <p><b>Conventional:</b> down payment is 20% or more of the purchase price.<br><b>High ratio:</b> down payment is less than 20%, and must be insured through CMHC, Sagen, or Canada Guaranty. Premiums typically range 0.6% to 4.5% of the mortgage, paid up front or added to the loan.</p>
+        </div>
+        <div>
+          <table>
+            <tr><th>Down payment</th><th>Premium</th></tr>
+            <tr><td>Up to 65%</td><td>0.60%</td></tr>
+            <tr><td>Up to 75%</td><td>1.70%</td></tr>
+            <tr><td>Up to 80%</td><td>2.40%</td></tr>
+            <tr><td>Up to 85%</td><td>2.80%</td></tr>
+            <tr><td>Up to 90%</td><td>3.10%</td></tr>
+            <tr><td>Up to 95%</td><td>4.0%</td></tr>
+            <tr><td>90.01 to 95% non-traditional</td><td>4.50%</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="cols2" style="margin-top:8px;">
+        <div>
+          <h4>Other costs to plan for</h4>
+          <ul>
+            <li><b>Appraisal & application fee:</b> ~$250 to $350</li>
+            <li><b>RRSP monies:</b> up to $35,000 per individual for first-time buyers</li>
+            <li><b>Building inspections:</b> ~$500 to $600, highly recommended</li>
+            <li><b>Buyer rebate:</b> first-time buyer land transfer tax rebate up to $4,000</li>
+            <li><b>Legal fees & disbursements:</b> ~$1,200 to $1,500 (title search, status certificate for condos, registering mortgage/deed, office disbursements)</li>
+            <li><b>Survey:</b> ~$2,000 to $5,000 if one doesn't exist, title insurance covers the gap</li>
+            <li><b>Title insurance:</b> ~$400, a must on all real property purchases</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Land transfer tax</h4>
+          <p>Paid on closing to the Treasurer of Ontario, calculated on final purchase price:</p>
+          <ul>
+            <li>0.5% up to $55,000</li>
+            <li>1% from $55,001 to $250,000</li>
+            <li>1.5% from $250,001 to $400,000</li>
+            <li>2% from $400,001 to $2,000,000</li>
+            <li>2.5% above $2,000,001</li>
+          </ul>
+          <p>*First-time buyers may qualify for a rebate up to $4,000.</p>
+        </div>
+      </div>
+      <p class="muted" style="font-size:13px;font-style:italic;">All fees, costs, and disbursements listed are approximate. Actual figures should be confirmed directly with your lawyer.</p>
+    </div>
+  </section>
+
+  <section class="side-block">
+    <div class="side-bar">Step 3</div>
+    <div>
+      <h2 style="font-size:22px;">Buyer Consultation</h2>
+      <h4 style="font-size:13px;font-family:'Poppins',sans-serif;font-weight:700;color:var(--red);text-transform:uppercase;">Choosing the right REALTOR&reg;</h4>
+      <p class="muted" style="font-size:14px;">Choose someone who offers real advice on locations, styles, prices, trends, financing, and how to handle the unexpected, and who has connections with lawyers, inspectors, and mortgage reps. Your agent should ensure the right conditions are built into your offer, and should be skilled at negotiating on your behalf.</p>
+      <h4 style="font-size:13px;font-family:'Poppins',sans-serif;font-weight:700;color:var(--red);text-transform:uppercase;">The one-on-one consultation</h4>
+      <div class="mini-step"><div class="n">1</div><div><p>Decide on your needs and wants, bedrooms, bathrooms, garage, location.</p></div></div>
+      <div class="mini-step"><div class="n">2</div><div><p>Get your agent's read on the market and the neighbourhoods that fit.</p></div></div>
+      <div class="mini-step"><div class="n">3</div><div><p>Talk through any critical concerns affecting your decision.</p></div></div>
+      <div class="tip"><b>Tips</b>Location, location, location, decide the area first. Don't get thrown off by the current owner's decor, picture your own furniture there. Focus on the bones of the home, even a place that needs paint might still be the right fit.</div>
+    </div>
+  </section>
+
+  <section class="side-block">
+    <div class="side-bar">Step 4</div>
+    <div>
+      <h2 style="font-size:22px;">House Hunting</h2>
+      <p class="muted" style="font-size:14px;">We source homes through MLS&reg;, new builders, private sellers, and my network of contacts. I set up every appointment, resale or new build, and we get first access to hot new listings the moment they hit.</p>
+      <div class="cols2">
+        <div>
+          <h4>Tips</h4>
+          <ul>
+            <li>Ask me about anything you see online or in the paper, regardless of which brokerage's name is on it, I'll get you the details and a showing.</li>
+            <li>For new construction, I'll advise on reputable builders and which upgrades actually help resale value. The onsite salesperson represents the builder, you deserve your own representation.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Environmental issues to flag</h4>
+          <ul>
+            <li>Rental equipment costs & buyouts</li>
+            <li>Hydro lines</li>
+            <li>Mould</li>
+            <li>Knob & tube wiring</li>
+            <li>60+ amp services</li>
+            <li>Grow-ops</li>
+            <li>UFFI</li>
+            <li>Asbestos / vermiculite insulation</li>
+            <li>Kitec or lead plumbing</li>
+            <li>Well water testing / system inspection</li>
+            <li>Septic system inspection</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tip"><b>Buying on MLS&reg; / REALTOR.ca</b>No matter which company represents the seller, or whose sign is on the lawn, I can arrange the showing.</div>
+    </div>
+  </section>
+
+  <section class="side-block">
+    <div class="side-bar">Step 5</div>
+    <div>
+      <h2 style="font-size:22px;">Pricing</h2>
+      <p class="muted" style="font-size:14px;">Make sure you actually know what the home is worth. I'll prepare a Comprehensive Comparative Market Analysis (CMA) so you know today's market value before you offer.</p>
+      <div class="mini-step"><div class="n">1</div><div><h4>Similar homes recently sold</h4><p>Tells us what buyers are actually willing to pay for this kind of home, in this area, right now.</p></div></div>
+      <div class="mini-step"><div class="n">2</div><div><h4>Similar homes for sale now</h4><p>Tells us what we're competing against, and how buyers will compare this home to the alternatives.</p></div></div>
+      <div class="mini-step"><div class="n">3</div><div><h4>Similar homes that didn't sell</h4><p>Expired or terminated listings usually flag pricing problems or other issues worth understanding.</p></div></div>
+      <div class="tip"><b>Tips</b>Try to avoid a bidding war if possible, and try not to get too emotionally attached, ask yourself honestly if you need this exact home no matter what.</div>
+    </div>
+  </section>
+
+  <section class="side-block">
+    <div class="side-bar">Step 6</div>
+    <div>
+      <h2 style="font-size:22px;">Preparing an Offer</h2>
+      <p class="muted" style="font-size:14px;">Every offer gets structured around your specific needs and the property you're buying. Here's what typically goes into one.</p>
+      <div class="cols2">
+        <div>
+          <h4>Price</h4><p>Set an initial offer that avoids offending the seller, using the CMA as our foundation.</p>
+          <h4>Deposit</h4><p>Varies by price and competition, often $10,000 minimum or more. Some sellers accept a lower initial deposit with more due upon condition removal.</p>
+          <h4>Conditions</h4><p>Financing, inspections, insurance, site influences, lawyer approval, sale of your current home, whatever protects you.</p>
+          <h4>Chattels included</h4><p>Usually outlined in the MLS&reg; listing, we'll confirm anything you want added or anything the seller included that you don't.</p>
+        </div>
+        <div>
+          <h4>Terms</h4><p>Balance due on closing, chattels in good working order, right to a final walkthrough, survey requests, tenancy info, and more.</p>
+          <h4>Rental equipment & exclusions</h4><p>I'll help confirm costs on any rented equipment and potential buyout options.</p>
+          <h4>Irrevocable</h4><p>The window one party gives the other to accept an offer before it becomes null and void.</p>
+          <h4>Closing date</h4><p>When you're required to pay in full and take possession, plan your move accordingly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="side-block">
+    <div class="side-bar">Step 7</div>
+    <div>
+      <h2 style="font-size:22px;">Negotiating the Offer</h2>
+      <p class="muted" style="font-size:14px;">The seller's goal is the highest price on their terms, yours is the lowest price on your terms. Market conditions play a huge factor in the advice I'll give you here.</p>
+      <div class="cols2">
+        <div>
+          <h4>Offer foundation</h4><p>We look at what's sold recently and what's currently available so you have clarity on where to start your bid and where you're willing to end up.</p>
+          <h4>You're at a disadvantage as a buyer</h4><p>The seller owns the property and can accept or reject any offer, and can even raise their asking price during negotiation.</p>
+        </div>
+        <div>
+          <h4>Appealing to the seller</h4><p>We structure limited conditions to appeal to the seller, without ever compromising your protection. Giving the seller the closing date they want can matter more than price.</p>
+          <h4>Multiple offers</h4><p>Staying reachable matters, sellers may counter the most responsive buyer first. You may not get a second chance to improve your offer.</p>
+        </div>
+      </div>
+      <div class="tip"><b>When an offer is presented, five things can happen</b>The seller accepts it, rejects it, rejects it with a counter, refuses to do anything, or takes the property off the market entirely.</div>
+    </div>
+  </section>
+
+  <section class="side-block">
+    <div class="side-bar">Step 8</div>
+    <div>
+      <h2 style="font-size:22px;">Satisfying the Conditions</h2>
+      <p class="muted" style="font-size:14px;">Buyers typically get up to five business days (excluding weekends and statutory holidays) to remove conditions and proceed.</p>
+      <div class="cols2">
+        <div>
+          <h4>Financing</h4><p>Your lender needs the Agreement of Purchase and Sale, a feature sheet with front exterior photo, and your supporting documents.</p>
+          <h4>Inspection</h4><p>A qualified inspector checks for deficiencies or major structural issues, could include septic or environmental inspections too.</p>
+        </div>
+        <div>
+          <h4>Insurance</h4><p>Confirms with your provider that the home can actually be insured.</p>
+          <h4>Lawyer approval</h4><p>Optional but recommended, your lawyer reviews the Agreement of Purchase and Sale for legal opinion and approval.</p>
+        </div>
+      </div>
+
+      <h4 style="font-size:13px;font-family:'Poppins',sans-serif;font-weight:700;color:var(--red);text-transform:uppercase;margin-top:20px;">Home inspections</h4>
+      <p class="muted" style="font-size:14px;">A home inspection is a visual examination of the home's condition at the time of inspection. It covers roofing, chimneys and flashing, exterior, drainage, structure, electrical, heating and cooling, insulation, plumbing, foundation, and interior, usually about three hours.</p>
+      <p class="muted" style="font-size:14px;">A quality inspection uncovers major defects (typically $1,000+ repairs) before they become expensive surprises, and gives you peace of mind about what you're actually buying. It's highly recommended you attend in person.</p>
+      <div class="cols2">
+        <div><h4>Cost</h4><p>Typically $500 to $600 plus HST, a small price against the cost of a major deficiency discovered after you own the home. Make sure your inspector gives a written report, a verbal one won't help you months later.</p></div>
+        <div><h4>Choosing an inspector</h4><p>Look for a Registered Home Inspector (RHI) through the Ontario Association of Home Inspectors (OAHI), members follow a strict code of ethics and standards of practice.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="side-block">
+    <div class="side-bar">Step 9</div>
+    <div>
+      <h2 style="font-size:22px;">Fulfilling the Conditions</h2>
+      <p class="muted" style="font-size:14px;">Once you're satisfied with every condition, they get removed by way of a Notice of Fulfillment, a Waiver, or an Amendment. You sign it and it's delivered to the seller before the conditional period expires. Once they acknowledge receipt, you've bought your new home. (If removing conditions by Amendment, the seller has to agree to it, not just acknowledge it.)</p>
+      <p class="muted" style="font-size:14px;">I handle sending all required documentation to your lawyer, who takes it from there through to closing. I'll stay in touch with you the whole way, before and after closing, for anything that comes up.</p>
+    </div>
+  </section>
+
+  <section class="side-block">
+    <div class="side-bar">Step 10</div>
+    <div>
+      <h2 style="font-size:22px;">Celebrate</h2>
+      <p class="muted" style="font-size:14px;">Congratulations, it's time to celebrate, you've just bought a home.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Buyer's Homework</div>
+    <h2>Monthly lifestyle expenses</h2>
+    <p class="muted" style="font-size:14px;">Get a real read on what you can comfortably carry each month before you start house hunting.</p>
+
+    <div class="worksheet-cat">Transportation</div>
+    <div class="worksheet-row"><span>Public transport / parking</span><span>$</span></div>
+    <div class="worksheet-row"><span>Fuel / repairs</span><span>$</span></div>
+    <div class="worksheet-row"><span>Insurance / license</span><span>$</span></div>
+    <div class="worksheet-cat">Food</div>
+    <div class="worksheet-row"><span>Groceries</span><span>$</span></div>
+    <div class="worksheet-row"><span>Dining / snacks</span><span>$</span></div>
+    <div class="worksheet-cat">Utilities</div>
+    <div class="worksheet-row"><span>Phone / cell / cable / internet</span><span>$</span></div>
+    <div class="worksheet-row"><span>Gas / hydro</span><span>$</span></div>
+    <div class="worksheet-row"><span>Water / security</span><span>$</span></div>
+    <div class="worksheet-cat">Health</div>
+    <div class="worksheet-row"><span>Life insurance</span><span>$</span></div>
+    <div class="worksheet-row"><span>Medication / wellness</span><span>$</span></div>
+    <div class="worksheet-cat">Personal</div>
+    <div class="worksheet-row"><span>Entertainment / hobbies / sports</span><span>$</span></div>
+    <div class="worksheet-row"><span>Donations / subscriptions</span><span>$</span></div>
+    <div class="worksheet-cat">Child care</div>
+    <div class="worksheet-row"><span>Daycare / activities / allowance</span><span>$</span></div>
+    <div class="worksheet-row"><span>School supplies / fees</span><span>$</span></div>
+    <div class="worksheet-row"><span>Babysitting / clothing / supplies</span><span>$</span></div>
+    <div class="worksheet-cat">Maintenance</div>
+    <div class="worksheet-row"><span>Decor / upgrades</span><span>$</span></div>
+    <div class="worksheet-row"><span>Gardening / repairs</span><span>$</span></div>
+    <div class="worksheet-cat">Loans</div>
+    <div class="worksheet-row"><span>Car loan(s)</span><span>$</span></div>
+    <div class="worksheet-row"><span>Credit card(s)</span><span>$</span></div>
+    <div class="worksheet-row"><span>Other loans</span><span>$</span></div>
+    <div class="worksheet-cat">Savings</div>
+    <div class="worksheet-row"><span>Emergency fund</span><span>$</span></div>
+    <div class="worksheet-row"><span>RRSP / RESP</span><span>$</span></div>
+    <div class="worksheet-row"><span>Seasonal expenses / vacation</span><span>$</span></div>
+    <div class="worksheet-total"><span>Total expenses (A)</span><span>$</span></div>
+    <div class="worksheet-total" style="border-top:none;margin-top:4px;"><span>Total monthly income</span><span>$</span></div>
+    <div class="worksheet-total" style="border-top:none;margin-top:4px;"><span>Minus total lifestyle expenses (A)</span><span>$</span></div>
+    <div class="worksheet-total"><span>Amount remaining for housing costs</span><span>$</span></div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Planning To Upgrade?</div>
+    <h2>Life expectancy of upgrades</h2>
+    <p class="muted" style="font-size:14px;">Once you own, prioritizing upgrades means weighing cost against how long each component actually lasts.</p>
+    <div class="cols2">
+      <div>
+        <table>
+          <tr><th>Roof covering</th><th>Years</th></tr>
+          <tr><td>Asphalt standard shingle</td><td>12 to 15</td></tr>
+          <tr><td>Asphalt premium shingle</td><td>15 to 30</td></tr>
+          <tr><td>Wood shingle</td><td>10 to 20</td></tr>
+          <tr><td>Asbestos cement</td><td>40 to 80</td></tr>
+          <tr><td>Slate tile</td><td>40 to 80</td></tr>
+          <tr><td>Roll roofing</td><td>5 to 15</td></tr>
+          <tr><td>Metal</td><td>60</td></tr>
+        </table>
+        <table>
+          <tr><th>Heating</th><th>Years</th></tr>
+          <tr><td>Forced air furnace</td><td>10 to 25</td></tr>
+          <tr><td>Oil tank</td><td>30</td></tr>
+          <tr><td>Water boiler, cast iron</td><td>30 to 50</td></tr>
+        </table>
+      </div>
+      <div>
+        <table>
+          <tr><th>Plumbing</th><th>Years</th></tr>
+          <tr><td>Galvanized water pipe</td><td>20 to 25</td></tr>
+          <tr><td>Hot water heater</td><td>5 to 15</td></tr>
+          <tr><td>Septic / sewer pump</td><td>5 to 10</td></tr>
+          <tr><td>Well pump</td><td>10</td></tr>
+        </table>
+        <table>
+          <tr><th>Cooling</th><th>Years</th></tr>
+          <tr><td>Central air conditioner</td><td>10 to 15</td></tr>
+          <tr><td>Heat pump</td><td>10 to 15</td></tr>
+          <tr><td>Window air conditioner</td><td>10 to 20</td></tr>
+        </table>
+        <table>
+          <tr><th>Appliances</th><th>Years</th></tr>
+          <tr><td>Dishwasher</td><td>5 to 12</td></tr>
+          <tr><td>Dryer</td><td>10 to 25</td></tr>
+          <tr><td>Washing machine</td><td>5 to 15</td></tr>
+          <tr><td>Oven / range</td><td>15 to 20</td></tr>
+          <tr><td>Garbage disposal</td><td>5 to 12</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Glossary</div>
+    <h2>Terms worth knowing</h2>
+    <div class="glossary-grid">
+      <div>
+        <div class="glossary-term"><b>Agreement of Purchase & Sale</b><p>A written document where the buyer agrees to buy and the seller agrees to sell under stated terms and conditions.</p></div>
+        <div class="glossary-term"><b>Amortization</b><p>The length of time it takes to pay off a mortgage in full through equal installments of principal and interest.</p></div>
+        <div class="glossary-term"><b>Closing statement</b><p>The financial disclosure accounting for all funds received and expected at closing, including deposits and mortgage life insurance.</p></div>
+        <div class="glossary-term"><b>Conditions</b><p>A requirement that must be satisfied before a contract becomes binding, for example financing approval.</p></div>
+        <div class="glossary-term"><b>Condominium</b><p>Ownership of a specific unit plus a proportionate interest in common areas.</p></div>
+        <div class="glossary-term"><b>Cooperative</b><p>A corporation or trust holds title to the property and grants occupancy rights to shareholders.</p></div>
+        <div class="glossary-term"><b>CMHC</b><p>Canada Mortgage and Housing Corporation, provides default insurance on mortgages under 20% down.</p></div>
+        <div class="glossary-term"><b>Deposit</b><p>Financial security given by the buyer as a commitment to complete the transaction, credited toward the purchase price at closing.</p></div>
+      </div>
+      <div>
+        <div class="glossary-term"><b>Gross Debt Service Ratio (GDS)</b><p>The percentage of gross income that can go toward housing costs, including mortgage payments, taxes, and condo fees where applicable.</p></div>
+        <div class="glossary-term"><b>Home inspection report</b><p>A qualified inspector's report on a property's overall condition, structure and mechanical systems included.</p></div>
+        <div class="glossary-term"><b>Home warranty plan</b><p>Protection against failure of mechanical systems, may include plumbing, electrical, heating, and appliances.</p></div>
+        <div class="glossary-term"><b>Joint tenancy</b><p>Equal undivided ownership by two or more people, survivors typically take the deceased's interest.</p></div>
+        <div class="glossary-term"><b>Lien</b><p>A legal hold or claim on property as security for a debt.</p></div>
+        <div class="glossary-term"><b>Loan-to-value ratio</b><p>The mortgage amount relative to the appraised value, expressed as a percentage.</p></div>
+        <div class="glossary-term"><b>Mortgage commitment</b><p>A written promise to provide a loan for a specified amount on specified terms.</p></div>
+        <div class="glossary-term"><b>P.I.T.</b><p>Principal, interest, and taxes.</p></div>
+        <div class="glossary-term"><b>REALTOR&reg;</b><p>A real estate broker or salesperson who is an active member of CREA and the local real estate board, and follows a strict code of ethics.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">One More Thing</div>
+    <h2>A few tips for buyers</h2>
+    <div class="cols2">
+      <ul>
+        <li>Choose a REALTOR&reg; you're comfortable with, someone honest and trustworthy who actually understands your needs.</li>
+        <li>Decide your needs and wants before you start looking, and lean on your REALTOR&reg;'s advice.</li>
+        <li>Get pre-approved, know how much you can actually afford.</li>
+        <li>Stick to your budget, you still want to go out for dinner and a movie sometime.</li>
+        <li>Get your mortgage documentation ready ahead of time, T4s, employment letter, proof of down payment.</li>
+        <li>Know how much the home is worth so you don't pay too much.</li>
+        <li>Avoid getting into a bidding war, you might pay more than you should.</li>
+      </ul>
+      <ul>
+        <li>Don't get overwhelmed by the current owner's decor, picture your own furniture there instead.</li>
+        <li>Look at the bones of the home, even one that needs a coat of paint might still suit you.</li>
+        <li>Location, location, location.</li>
+        <li>Think about proximity to work, school, and transit.</li>
+        <li>Get the home professionally inspected.</li>
+        <li>If you're renting, you might already qualify to buy without realizing it, talk to a mortgage rep.</li>
+        <li>Get a lawyer, usually a referral from family, friends, or your REALTOR&reg;.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="cta">
+    <div class="eyebrow" style="color:#fff;opacity:0.8;">Questions?</div>
+    <h2>I'd be happy to answer them</h2>
+    <p>Whenever you're ready to start, or even just want a straight read on the market, reach out.</p>
+    <p class="contact-line">c: 519.854.8179 &nbsp;·&nbsp; chase@chasinghomesinldn.ca &nbsp;·&nbsp; chasinghomesinldn.ca</p>
+  </div>
+
+</div>
+
+<footer>Chase Raymond, REALTOR&reg;, Keller Williams Lifestyles Realty, Brokerage. Independently owned and operated.</footer>
+
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Selling Process, Chase Raymond</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--red:#CE011F;--red-dark:#A50019;--black:#0D0D0D;--white:#FFFFFF;--offwhite:#F6F3EF;--grey:#6B6B6B;--line:#E7E2DB;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Inter',sans-serif;color:var(--black);background:var(--offwhite);line-height:1.6;}
+  h1,h2,h3,.headline{font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;margin:0;line-height:1;}
+  .eyebrow{font-family:'Inter',sans-serif;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;font-size:12px;color:var(--red);}
+  .page{max-width:820px;margin:0 auto;padding:0 32px;}
+  section{padding:52px 0;border-bottom:1px solid var(--line);}
+  section:last-child{border-bottom:none;}
+  h2{font-size:26px;margin-bottom:18px;}
+  p{color:var(--black);}
+  .muted{color:var(--grey);}
+
+  .cover{background:var(--red);color:var(--white);padding:90px 0 60px;}
+  .cover .panel{background:var(--white);color:var(--red);display:inline-block;padding:20px 30px;margin-bottom:22px;}
+  .cover .panel h1{font-size:46px;line-height:1.05;}
+  .cover .tagline{font-family:'Poppins',sans-serif;font-weight:600;font-size:18px;margin:14px 0 26px;}
+  .cover .meta{font-size:14px;border-top:1px solid rgba(255,255,255,0.3);padding-top:16px;}
+
+  .side-block{display:grid;grid-template-columns:64px 1fr;gap:28px;align-items:stretch;}
+  .side-bar{background:var(--red);color:var(--white);writing-mode:vertical-rl;transform:rotate(180deg);
+    font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;font-size:15px;letter-spacing:0.08em;
+    display:flex;align-items:center;justify-content:center;padding:20px 0;}
+  @media (max-width:600px){.side-block{grid-template-columns:1fr;}.side-bar{writing-mode:horizontal-tb;transform:none;padding:10px 16px;text-align:left;justify-content:flex-start;}}
+
+  .step-overview{display:grid;grid-template-columns:1fr 1fr;gap:12px 32px;margin-top:12px;}
+  .step-overview div{display:flex;gap:12px;align-items:baseline;font-size:14px;}
+  .step-overview .n{font-family:'Poppins',sans-serif;font-weight:800;color:var(--red);min-width:20px;}
+  @media (max-width:560px){.step-overview{grid-template-columns:1fr;}}
+
+  .mini-step{display:grid;grid-template-columns:36px 1fr;gap:14px;margin-bottom:16px;}
+  .mini-step .n{font-family:'Poppins',sans-serif;font-weight:800;color:var(--red);font-size:18px;}
+  .mini-step h4{font-size:14px;font-family:'Poppins',sans-serif;font-weight:700;text-transform:none;margin:0 0 4px;}
+  .mini-step p{margin:0;font-size:14px;color:var(--grey);}
+
+  .cols2{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  @media (max-width:600px){.cols2{grid-template-columns:1fr;}}
+  .cols2 h4{font-size:13px;font-family:'Poppins',sans-serif;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:0.03em;margin-bottom:8px;}
+  .cols2 p, .cols2 ul{font-size:14px;color:var(--grey);margin:0 0 14px;}
+  .cols2 ul{padding-left:18px;}
+
+  .tip{background:var(--white);border-left:4px solid var(--red);padding:14px 18px;margin-bottom:12px;font-size:14px;}
+  .tip b{display:block;font-family:'Poppins',sans-serif;font-size:13px;margin-bottom:3px;}
+
+  table{width:100%;border-collapse:collapse;font-size:13px;margin:14px 0;}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);}
+  th{font-family:'Poppins',sans-serif;font-weight:700;background:var(--white);text-transform:uppercase;font-size:11px;letter-spacing:0.04em;color:var(--red);}
+
+  .worksheet-row{display:flex;justify-content:space-between;border-bottom:1px dotted var(--line);padding:6px 0;font-size:13px;}
+  .worksheet-cat{font-family:'Poppins',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;color:var(--red);margin:16px 0 4px;}
+  .worksheet-total{display:flex;justify-content:space-between;border-top:2px solid var(--black);padding-top:10px;margin-top:10px;font-family:'Poppins',sans-serif;font-weight:700;}
+
+  .glossary-term{margin-bottom:16px;}
+  .glossary-term b{display:block;font-family:'Poppins',sans-serif;font-size:13px;color:var(--red);text-transform:uppercase;letter-spacing:0.02em;margin-bottom:3px;}
+  .glossary-term p{margin:0;font-size:13px;color:var(--grey);}
+  .glossary-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 32px;}
+  @media (max-width:600px){.glossary-grid{grid-template-columns:1fr;}}
+
+  .cta{background:var(--black);color:var(--white);padding:40px;text-align:left;}
+  .cta h2{color:var(--white);font-size:24px;}
+  .cta p{color:rgba(255,255,255,0.75);font-size:14px;}
+  .cta .contact-line{font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;margin-top:14px;color:var(--white);}
+
+  footer{padding:32px 0;text-align:center;font-size:12px;color:var(--grey);}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="page">
+    <div class="eyebrow">Seller's Guide</div>
+    <div class="panel"><h1>The Selling<br>Process</h1></div>
+    <p class="tagline">Chasin' Top Dollar For Your Home</p>
+    <div class="meta">Chase Raymond, REALTOR&reg; &nbsp;·&nbsp; c: 519.854.8179 &nbsp;·&nbsp; chase@chasinghomesinldn.ca &nbsp;·&nbsp; chasinghomesinldn.ca<br>Keller Williams Lifestyles Realty, Brokerage. Independently owned and operated.</div>
+  </div>
+</div>
+
+<div class="page">
+
+  <section>
+    <div class="eyebrow">A Note From Chase</div>
+    <h2>Getting your home sold</h2>
+    <p class="muted">I realize you have a choice when hiring a REALTOR&reg; to sell your home, and I want you to know I consider you the most important part of what I do.</p>
+    <p class="muted">From the listing consultation to the closing table, I aim for a five-star experience for every seller. Whether this is the first home you've sold or your fifth, every property and every situation gets an individualized strategy, not a template.</p>
+    <p class="muted">I value the relationships I build through each sale and aim to be your trusted real estate advisor for years to come, I judge my success on how well I meet your needs, not just on the sale price.</p>
+    <p class="muted">Thank you for your consideration, I look forward to working with you.</p>
+    <p style="font-family:'Poppins',sans-serif;font-weight:700;">Chase Raymond<br><span style="font-family:'Inter',sans-serif;font-weight:400;font-size:13px;color:var(--grey);">c: 519.854.8179 &nbsp;·&nbsp; chase@chasinghomesinldn.ca</span></p>
+  </section>
+
+  <section>
+    <div class="eyebrow">7 Factors To Consider</div>
+    <h2>When selling a home</h2>
+    <p class="muted">Selling a home well takes more than putting a sign in the yard. Here are the seven factors worth getting right before your home hits the market.</p>
+    <div class="mini-step"><div class="n">1</div><div><h4>Timing</h4><p>London's market moves in seasonal patterns. Listing at the right moment, or waiting a few weeks, can change your outcome more than almost anything else.</p></div></div>
+    <div class="mini-step"><div class="n">2</div><div><h4>Pricing strategy</h4><p>Overpricing costs you more than underpricing. Homes that sit too long start to look like something's wrong, even when nothing is.</p></div></div>
+    <div class="mini-step"><div class="n">3</div><div><h4>Presentation & staging</h4><p>First impressions happen online, in photos, before a buyer ever steps inside. Small, targeted work here outperforms expensive renovations.</p></div></div>
+    <div class="mini-step"><div class="n">4</div><div><h4>Marketing reach</h4><p>Your listing needs to actually get seen, MLS&reg;, professional photography, social media, and my personal network all play a role.</p></div></div>
+    <div class="mini-step"><div class="n">5</div><div><h4>Showings & access</h4><p>The easier your home is to show, the more offers you're likely to see. Flexibility here is leverage.</p></div></div>
+    <div class="mini-step"><div class="n">6</div><div><h4>Closing flexibility</h4><p>A closing date that works for the buyer can be worth more to them than a lower price, that's real negotiating room for you.</p></div></div>
+    <div class="mini-step"><div class="n">7</div><div><h4>Net proceeds planning</h4><p>Knowing what you'll actually walk away with, after commission, legal fees, and mortgage payout, before you list, not after.</p></div></div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Overview</div>
+    <h2>The selling process, ten steps</h2>
+    <div class="step-overview">
+      <div><span class="n">1</span> Listing Consultation</div>
+      <div><span class="n">6</span> Showings & Open Houses</div>
+      <div><span class="n">2</span> Home Evaluation & Pricing</div>
+      <div><span class="n">7</span> Offers & Negotiation</div>
+      <div><span class="n">3</span> Prep & Staging</div>
+      <div><span class="n">8</span> Conditions & Due Diligence</div>
+      <div><span class="n">4</span> Photos & Marketing</div>
+      <div><span class="n">9</span> Fulfilling the Conditions</div>
+      <div><span class="n">5</span> Going Live</div>
+      <div><span class="n">10</span> Closing & Celebrate</div>
+    </div>
+  </section>
+
+  <section class="side-block">
+    <div class="side-bar">Step 1</div>
+    <div>
+      <h2 style="font-size:22px;">Listing Consultation</h2>
+      <h4 style="font-size:13px;font-family:'Poppins',sans-serif;font-weight:700;color:var(--red);text-transform:uppercase;">Choosing the right REALTOR&reg;</h4>
+      <p class="muted" style="font-size:14px;">Choose someone who gives you real advice on pricing, timing, and marketing, not just what you want to hear. Your agent should have connections with lawyers, home inspectors, stagers, and contractors, and a real strategy for getting your home in front of serious buyers.</p>
+      <h4 style="font-size:13px;font-family:'Poppins',sans-serif;font-weight:700;color:var(--red);text-transform:uppercase;">What happens at the consultation</h4>
+      <div class="mini-step"><div class="n">1</div><div><p>I walk the property in person and get a feel for its condition, layout, and standout features.</p></div></div>
+      <div class="mini-step"><div class="n">2</div><div><p>We talk through your goals, timeline, and what "sold" needs to look like for you.</p></div></div>
+      <div class="mini-step"><div class="n">3</div><div><p>I walk you through comparable sales data so pricing decisions are grounded in real numbers, not guesses.</p></div></div>
+      <div class="tip"><b>Tips</b>Be upfront about your timeline, it changes the strategy. Ask questions, a good agent wants you informed, not just along for the ride.</div>
+    </div>
+  </section>
+
+  <section class="side-block">
+    <div class="side-bar">Step 2</div>
+    <div>
+      <h2 style="font-size:22px;">Home Evaluation & Pricing</h2>
+      <p class="muted" style="font-size:14px;">Make sure you actually know what your home is worth before you set a price. I'll prepare a Comprehensive Comparative Market Analysis (CMA) so the number we land on is grounded in today's market, not last year's.</p>
+      <div class="mini-step"><div class="n">1</div><div><h4>Similar homes recently sold</h4><p>Tells us what buyers are actually paying for homes like yours, in your area, right now.</p></div></div>
+      <div class="mini-step"><div class="n">2</div><div><h4>Similar homes currently for sale</h4><p>Tells us what you're competing against, and how buyers will judge your home against the alternatives.</p></div></div>
+      <div class="mini-step"><div class="n">3</div><div><h4>Similar homes that didn't sell</h4><p>Expired or terminated listings usually flag pricing problems worth avoiding.</p></div></div>
+      <div class="tip"><b>Tips</b>Price it right from day one, the first two weeks on market get the most attention. Don't chase the market down with repeated price drops, it signals desperation to buyers.</div>
+    </div>
+  </section>
+
+  <section class="side-block">
+    <div class="side-bar">Step 3</div>
+    <div>
+      <h2 style="font-size:22px;">Prep & Staging</h2>
+      <p class="muted" style="font-size:14px;">Small, targeted work almost always outperforms big renovations dollar for dollar. Here's where to focus.</p>
+      <div class="cols2">
+        <div>
+          <h4>Worth doing</h4>
+          <ul>
+            <li>Declutter and depersonalize every room</li>
+            <li>Deep clean, including carpets and windows</li>
+            <li>Fresh, neutral paint where it needs it</li>
+            <li>Fix the small stuff, leaky taps, loose handles, burnt-out bulbs</li>
+            <li>Curb appeal, lawn, entryway, front door</li>
+            <li>Professional staging or a consult, even light staging moves the needle</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Usually skip</h4>
+          <ul>
+            <li>Full kitchen or bathroom renovations right before listing</li>
+            <li>Major structural changes with no clear ROI</li>
+            <li>Trendy finishes that narrow your buyer pool</li>
+            <li>Anything that won't be done and cleaned up before photos</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tip"><b>Tips</b>Ask me before spending on any renovation, not every upgrade pays for itself at resale. A storage unit for excess furniture is often the best money you'll spend.</div>
+    </div>
+  </section>
+
+  <section class="side-block">
+    <div class="side-bar">Step 4</div>
+    <div>
+      <h2 style="font-size:22px;">Photos & Marketing</h2>
+      <p class="muted" style="font-size:14px;">Most buyers decide whether to book a showing based on photos alone, this is the highest-leverage part of your listing.</p>
+      <div class="cols2">
+        <div>
+          <h4>What goes into it</h4>
+          <ul>
+            <li>Professional photography, every listing</li>
+            <li>Video or a virtual tour for the right property</li>
+            <li>A feature sheet highlighting what makes your home stand out</li>
+            <li>Yard sign and MLS&reg; syndication to REALTOR.ca and beyond</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Where it's promoted</h4>
+          <ul>
+            <li>MLS&reg; and REALTOR.ca</li>
+            <li>Social media, targeted and organic</li>
+            <li>My buyer network and other agents at my brokerage</li>
+            <li>Email to my active buyer contacts</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="side-block">
+    <div class="side-bar">Step 5</div>
+    <div>
+      <h2 style="font-size:22px;">Going Live</h2>
+      <p class="muted" style="font-size:14px;">Your listing goes live on MLS&reg; and everywhere else simultaneously. The first seven days on market typically get the most traffic and the most serious interest, so everything above needs to be locked in before launch day, not scrambled together after.</p>
+      <div class="tip"><b>Tips</b>Have the home fully show-ready before we go live, the first showings often matter most. Be ready for a wave of activity in week one, that's normal and it's a good sign.</div>
+    </div>
+  </section>
+
+  <section class="side-block">
+    <div class="side-bar">Step 6</div>
+    <div>
+      <h2 style="font-size:22px;">Showings & Open Houses</h2>
+      <p class="muted" style="font-size:14px;">The easier your home is to access, the more buyers get through the door, and more buyers generally means more offers.</p>
+      <div class="cols2">
+        <div>
+          <h4>What to expect</h4>
+          <p>Showings are booked through a lockbox/showing service with as much notice as possible. I collect feedback after every showing and pass it along so we can adjust if needed.</p>
+        </div>
+        <div>
+          <h4>Open houses</h4>
+          <p>Used strategically, not as a default, some homes benefit, others sell faster through private showings alone. I'll tell you honestly which approach fits your property.</p>
+        </div>
+      </div>
+      <div class="tip"><b>Tips</b>Be flexible with showing times, turning down requests costs you buyers. Leave for showings when possible, buyers speak more freely and stay longer without the seller present.</div>
+    </div>
+  </section>
+
+  <section class="side-block">
+    <div class="side-bar">Step 7</div>
+    <div>
+      <h2 style="font-size:22px;">Offers & Negotiation</h2>
+      <p class="muted" style="font-size:14px;">Your goal is the highest price under your terms, the buyer's is the lowest price under theirs. I handle the back-and-forth so you get the strongest terms available.</p>
+      <div class="cols2">
+        <div>
+          <h4>What we review together</h4>
+          <ul>
+            <li><b>Price</b>, how it compares to your CMA and current market activity</li>
+            <li><b>Deposit</b>, the amount and timing offered</li>
+            <li><b>Conditions</b>, financing, inspection, insurance, sale of the buyer's home</li>
+            <li><b>Chattels & fixtures</b>, what's included or excluded</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Also worth weighing</h4>
+          <ul>
+            <li><b>Closing date</b>, does it work with your own move</li>
+            <li><b>Irrevocable</b>, how long you have to respond</li>
+            <li><b>Buyer strength</b>, pre-approved vs. conditional on financing</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tip"><b>Multiple offers</b>If more than one buyer is interested, I'll walk you through strategy, whether that's setting an offer date, reviewing all offers together, or negotiating with one buyer directly. Every situation is different, and I'll tell you honestly what gives you the best outcome.</div>
+    </div>
+  </section>
+
+  <section class="side-block">
+    <div class="side-bar">Step 8</div>
+    <div>
+      <h2 style="font-size:22px;">Conditions & Due Diligence</h2>
+      <p class="muted" style="font-size:14px;">Once you've accepted an offer, the buyer typically has a window (often up to five business days) to satisfy their conditions before the sale becomes firm.</p>
+      <div class="cols2">
+        <div>
+          <h4>What's usually expected of you</h4>
+          <ul>
+            <li>Reasonable access for the buyer's home inspection</li>
+            <li>Providing documents your lawyer or lender requests</li>
+            <li>Staying flexible on scheduling during this window</li>
+          </ul>
+        </div>
+        <div>
+          <h4>If issues come up</h4>
+          <p>If the buyer's inspection turns up something, we may renegotiate price or agree to repairs. I'll give you a straight read on what's reasonable to concede and what isn't.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="side-block">
+    <div class="side-bar">Step 9</div>
+    <div>
+      <h2 style="font-size:22px;">Fulfilling the Conditions</h2>
+      <p class="muted" style="font-size:14px;">Once the buyer is satisfied, conditions get removed by way of a Notice of Fulfillment, a Waiver, or an Amendment, signed and delivered before the conditional period expires. Once you acknowledge receipt, the sale becomes firm.</p>
+      <p class="muted" style="font-size:14px;">I send all required documentation to your lawyer, who takes it from there through to closing, and I'll stay in touch with you the whole way for anything that comes up.</p>
+    </div>
+  </section>
+
+  <section class="side-block">
+    <div class="side-bar">Step 10</div>
+    <div>
+      <h2 style="font-size:22px;">Closing & Celebrate</h2>
+      <p class="muted" style="font-size:14px;">The buyer typically does a final walkthrough shortly before closing to confirm the home's condition. Your lawyer handles the funds and paperwork on closing day, and once it's registered, the keys change hands. Congratulations, you've just sold your home.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Seller's Homework</div>
+    <h2>Estimated net proceeds</h2>
+    <p class="muted" style="font-size:14px;">A rough worksheet to get a real read on what you'd actually walk away with. Your lawyer will confirm exact figures at closing.</p>
+
+    <div class="worksheet-cat">Sale</div>
+    <div class="worksheet-row"><span>Estimated sale price</span><span>$</span></div>
+    <div class="worksheet-cat">Costs to sell</div>
+    <div class="worksheet-row"><span>Real estate commission (+ HST)</span><span>$</span></div>
+    <div class="worksheet-row"><span>Mortgage discharge / payout penalty</span><span>$</span></div>
+    <div class="worksheet-row"><span>Legal fees & disbursements</span><span>$</span></div>
+    <div class="worksheet-row"><span>Adjustments (property tax, utilities prorated)</span><span>$</span></div>
+    <div class="worksheet-row"><span>Staging / repairs / prep costs</span><span>$</span></div>
+    <div class="worksheet-row"><span>Moving costs</span><span>$</span></div>
+    <div class="worksheet-total"><span>Total costs (B)</span><span>$</span></div>
+    <div class="worksheet-total" style="border-top:none;margin-top:4px;"><span>Estimated sale price</span><span>$</span></div>
+    <div class="worksheet-total" style="border-top:none;margin-top:4px;"><span>Minus total costs (B)</span><span>$</span></div>
+    <div class="worksheet-total"><span>Estimated net proceeds</span><span>$</span></div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Glossary</div>
+    <h2>Terms worth knowing</h2>
+    <div class="glossary-grid">
+      <div>
+        <div class="glossary-term"><b>Comparative Market Analysis (CMA)</b><p>A report comparing your home to recently sold, active, and expired listings to determine a realistic market value.</p></div>
+        <div class="glossary-term"><b>Days on market</b><p>How long a listing has been active, a key factor in how buyers and other agents perceive a property.</p></div>
+        <div class="glossary-term"><b>Exclusive listing</b><p>An agreement where one brokerage represents the seller and is entitled to commission if the home sells during the term, regardless of who finds the buyer.</p></div>
+        <div class="glossary-term"><b>Feature sheet</b><p>A one-page marketing document highlighting a property's key details and selling points.</p></div>
+        <div class="glossary-term"><b>Firm sale</b><p>An accepted offer where all conditions have been satisfied or waived, the deal is now binding.</p></div>
+        <div class="glossary-term"><b>Chattels vs. fixtures</b><p>Chattels are movable items (like furniture) not included unless stated. Fixtures are permanently attached (like light fixtures) and are included unless excluded.</p></div>
+      </div>
+      <div>
+        <div class="glossary-term"><b>Holdback</b><p>An amount held in trust after closing, often for outstanding repairs or unresolved items.</p></div>
+        <div class="glossary-term"><b>Listing agreement</b><p>The contract between you and your brokerage authorizing the sale of your property, including commission and term.</p></div>
+        <div class="glossary-term"><b>Multiple representation</b><p>When one brokerage represents both buyer and seller in the same transaction, subject to specific disclosure rules.</p></div>
+        <div class="glossary-term"><b>Net sheet</b><p>An estimate of what a seller will walk away with after commission, fees, and payouts.</p></div>
+        <div class="glossary-term"><b>Status certificate</b><p>For condo sales, a document confirming the unit's financial and legal standing within the corporation.</p></div>
+        <div class="glossary-term"><b>Right of first refusal</b><p>A clause giving a specific party the chance to match a competing offer before you accept it.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">One More Thing</div>
+    <h2>A few tips for sellers</h2>
+    <div class="cols2">
+      <ul>
+        <li>Price it right from day one, overpricing costs more than underpricing.</li>
+        <li>Small fixes almost always beat big renovations dollar for dollar.</li>
+        <li>Professional photos aren't optional, most buyers decide online first.</li>
+        <li>Declutter and depersonalize before photos, not after the first showing feedback.</li>
+        <li>Know your numbers (commission, payout, closing costs) before you list, not after an offer lands.</li>
+        <li>Ask your REALTOR&reg; before spending on any renovation.</li>
+      </ul>
+      <ul>
+        <li>Timing matters, London's market has real seasonal patterns.</li>
+        <li>Be flexible with showings, more access generally means more offers.</li>
+        <li>Don't take low offers personally, they're often just an opening move.</li>
+        <li>Leave the house during showings when you can.</li>
+        <li>Get a lawyer lined up early, usually a referral from family, friends, or your REALTOR&reg;.</li>
+        <li>Choose a REALTOR&reg; who'll tell you the truth, not just what you want to hear.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="cta">
+    <div class="eyebrow" style="color:#fff;opacity:0.8;">Questions?</div>
+    <h2>I'd be happy to answer them</h2>
+    <p>Whenever you're ready to talk about listing, or just want an honest read on what your home is worth, reach out.</p>
+    <p class="contact-line">c: 519.854.8179 &nbsp;·&nbsp; chase@chasinghomesinldn.ca &nbsp;·&nbsp; chasinghomesinldn.ca</p>
+  </div>
+
+</div>
+
+<footer>Chase Raymond, REALTOR&reg;, Keller Williams Lifestyles Realty, Brokerage. Independently owned and operated.</footer>
+
+</body>
+</html>
