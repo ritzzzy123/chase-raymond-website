@@ -1,7 +1,7 @@
-/* Lead-capture form: emails go to the Formspree endpoint set in data-endpoint
-   (still a placeholder, see README), and regardless of whether that succeeds,
-   the visitor's guide download fires immediately via data-download so nobody
-   is ever stuck waiting on an email integration that isn't wired up yet. */
+/* Lead-capture form: emails go to the Formspree endpoint set in data-endpoint,
+   and regardless of whether that succeeds, the visitor's guide download fires
+   immediately via data-download so nobody is ever stuck waiting on the email
+   integration. */
 document.querySelectorAll(".lead-form").forEach((form) => {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
