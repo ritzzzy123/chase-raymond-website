@@ -21,8 +21,8 @@ assets/                    Logo, photos, guide downloads
 
 ## 1. Before you go live, swap in real assets
 - **Logo:** save `kw-logo-white.png` (the file Claude sent you in chat) into the `/assets/` folder in this project, that exact filename, that exact folder. It's currently being color-inverted via CSS to show black on the white nav bar; if your office has a proper black or red KW logo file, use that instead and remove the `filter:` style on the `<img>` tags in each HTML file for a cleaner result.
-- **Photos:** every "HEADSHOT PHOTO" / "PHOTO PLACEHOLDER" block is a stand-in. Replace with real photography, drop files in `/assets/` and swap the placeholder `<div>` for an `<img>` tag, or send real photos in chat and Claude will wire them in.
-- **About page copy:** the bio text is bracketed placeholder copy, replace with your actual background before publishing.
+- **Photos:** headshot and lifestyle photos are already wired in from `/assets/`.
+- **About page copy:** real bio is in place.
 
 ## 2. Hosting (pick one, all free or near-free)
 - **Netlify** (easiest): drag this whole folder onto app.netlify.com/drop, done. Connect `chasinghomesinldn.ca` in Site Settings → Domain Management.
@@ -31,15 +31,12 @@ assets/                    Logo, photos, guide downloads
 - Any basic web host (GoDaddy, Bluehost, etc.) also works, just upload the whole folder via FTP/file manager, `index.html` needs to sit at the root.
 
 ## 3. Contact form
-The form on `contact.html` doesn't send anywhere yet, it's just markup. Fastest fix: sign up free at [formspree.io](https://formspree.io), get a form endpoint, paste it into the `action="..."` attribute on the `<form>` tag in `contact.html`. No backend needed.
+Wired up to Formspree (`https://formspree.io/f/mppalkgn`). Submissions email straight to the address that Formspree account is registered to. If you ever need to point it at a different Formspree form, swap the `action="..."` attribute on the `<form>` tag in `contact.html`.
 
 ## 3b. Buyer's / Seller's guide lead capture (buying.html + selling.html)
-Same idea as the contact form. Right now, submitting your email on either page triggers an instant download of the guide (works today, no setup needed), but the email itself isn't being captured anywhere yet. To actually collect those emails:
-- Set up a Formspree endpoint (same as the contact form, can even be the same one).
-- On `buying.html` and `selling.html`, find `<form class="lead-form" data-endpoint="#" ...>` and replace `data-endpoint="#"` with your real Formspree URL, e.g. `data-endpoint="https://formspree.io/f/yourFormId"`.
-- The download still fires immediately either way, this just adds email capture on top.
+Also wired to the same Formspree endpoint. Submitting an email on either page both captures the lead and triggers an instant download of the guide. To point this at a separate Formspree form later, update `data-endpoint` on the `<form class="lead-form" ...>` tag in each file.
 
-The seller's guide (`assets/sellers-guide.html`) has real drafted content. The buyer's guide (`assets/buyers-guide.html`) is placeholder content marked clearly at the top, upload your existing buyer's guide and it'll get rebranded into the same layout.
+Both guides now have real content: `assets/buyers-guide.html` was rebranded from your existing PDF buyer's guide into the new layout, and `assets/sellers-guide.html` was drafted to match the same depth and structure.
 
 ## 4. Listings, DDF / live MLS data
 This site can't legally pull live MLS data until your real estate board issues you DDF (Data Distribution Facility) access, usually via a signed agreement plus RESO Web API or RETS credentials, or through a paid feed provider (Repliers, Realtyna, Spark API, etc.) who resells access under your license. That's on your end to request through your board/brokerage, not something built into this site.
@@ -67,7 +64,7 @@ Until then, edit `data/listings.json` directly to update what shows on the site,
 4. **Submit the site to Google Search Console and Bing Webmaster Tools**, verify domain ownership, submit `sitemap.xml` in both. This is what actually gets you crawled and indexed, none of the code above matters if Google doesn't know the site exists.
 5. **Fill in the `sameAs` links** in the JSON-LD on `index.html` (currently placeholders) with your real Instagram, Facebook, realtor.ca profile, and Google Business Profile URLs. This is the actual technical link between "Chase Raymond" search results and all your profiles.
 6. **Get one backlink from your brokerage's site** (an agent directory listing linking to chasinghomesinldn.ca), brokerage sites usually have solid domain authority and that link matters more than almost anything else on this list.
-7. **Replace the placeholder `assets/og-image.jpg`** with a real 1200×630px image (your headshot or a branded card), that's what shows up when the site gets shared or linked anywhere.
+7. ~~Replace the placeholder social-share image~~ Done, every page's og:image/twitter:image now points to `assets/Agent headshot.png`. It's square rather than the ideal 1200×630, so platforms will center-crop it a bit, fine for now, upgrade to a branded 1200×630 banner later if you want it more polished.
 
 None of this is optional if the goal is showing up on page one for your own name, structured data and meta tags help, but claimed GBP + realtor.ca + real backlinks + indexing is what actually moves the needle.
 
@@ -75,7 +72,7 @@ None of this is optional if the goal is showing up on page one for your own name
 The "Office Listings" tab on the homepage pulls from `data/office-listings.json`, currently sample data for other agents at your office. There's no automatic feed for this (no board grants that kind of cross-agent access), so this needs to be manually updated, or check with your office admin about a shared internal listing export you could pull from periodically.
 
 ## 7. Social links
-Icon links (IG / FB / TT / LI) are in place in every page footer, but all point to `#` placeholders right now, and the same placeholders sit in the `sameAs` array of the JSON-LD on `index.html`. Send over your actual Instagram, Facebook, TikTok, and LinkedIn URLs and they'll get wired in everywhere at once.
+Real icon links are wired into every page footer (Instagram, Facebook, TikTok, LinkedIn) using your branded SVG icons. The `sameAs` array in the JSON-LD on `index.html` is fully filled in now too: Instagram, Facebook, TikTok, LinkedIn, realtor.ca, and Google Business Profile all point to your real profiles.
 
 ## 8. What's next
 Social media template kit (New Listing, Just Sold, Open House, Coming Soon, Price Drop, Testimonial) is the next phase per the brand roadmap.
