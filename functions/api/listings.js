@@ -29,6 +29,12 @@ const formatPrice = (value) => {
     : "Contact for price";
 };
 
+const normalizeUrl = (value, fallback = "https://www.realtor.ca/") => {
+  const url = String(first(value, fallback));
+  if (/^https?:\/\//i.test(url)) return url;
+  return `https://${url.replace(/^\/+/, "")}`;
+};
+
 const mapProperty = (property) => ({
   id: String(first(property.ListingKey, property.ListingId, property.ListingID, "")),
   listingKey: String(first(property.ListingKey, "")),
@@ -41,7 +47,7 @@ const mapProperty = (property) => ({
   sqft: first(property.LivingArea, property.BuildingAreaTotal, "—"),
   mlsNumber: String(first(property.ListingId, property.ListingID, property.ListingKey, "")),
   image: getMediaUrl(property.Media),
-  url: first(property.ListingURL, property.ListingUrl, "https://www.realtor.ca/"),
+  url: normalizeUrl(first(property.ListingURL, property.ListingUrl)),
   agent: first(property.ListAgentFullName, property.ListAgentFullName2, null),
 });
 
