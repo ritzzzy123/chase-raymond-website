@@ -57,6 +57,7 @@ async function loadListings(targetSelector, options = {}) {
 }
 
 function renderListingCard(listing) {
+  const listingUrl = normalizeExternalUrl(listing.url);
   const image = listing.image
     ? `<img src="${escapeHtml(listing.image)}" alt="${escapeHtml(`${listing.address}, ${listing.city}`)}" loading="lazy">`
     : `<div class="photo-placeholder">Photo coming soon</div>`;
@@ -77,14 +78,19 @@ function renderListingCard(listing) {
         ${listing.mlsNumber ? `<div class="meta">MLS® ${escapeHtml(listing.mlsNumber)}</div>` : ""}
         ${listing.agent ? `<div class="meta" style="margin-top:4px;">Listed by ${escapeHtml(listing.agent)}</div>` : ""}
         <div class="listing-footer">
-          <div class="cta"><a href="${escapeHtml(listing.url)}" target="_blank" rel="noopener">View details &rarr;</a></div>
-          <a class="realtor-powered" href="${escapeHtml(listing.url || "https://www.realtor.ca/en")}" target="_blank" rel="noopener" aria-label="Powered by REALTOR.ca">
+          <div class="cta"><a href="${escapeHtml(listingUrl)}" target="_blank" rel="noopener">View details &rarr;</a></div>
+          <a class="realtor-powered" href="${escapeHtml(listingUrl)}" target="_blank" rel="noopener" aria-label="Powered by REALTOR.ca">
             <img width="125" src="https://www.realtor.ca/images/en-ca/powered_by_realtor.svg" alt="Powered by REALTOR.ca">
           </a>
         </div>
       </div>
     </div>
   `;
+}
+
+function normalizeExternalUrl(value) {
+  const url = String(value || "https://www.realtor.ca/en");
+  return /^https?:\/\//i.test(url) ? url : `https://${url.replace(/^\/+/, "")}`;
 }
 
 function escapeHtml(value) {
