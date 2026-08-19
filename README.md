@@ -76,3 +76,17 @@ Real icon links are wired into every page footer (Instagram, Facebook, TikTok, L
 
 ## 8. What's next
 Social media template kit (New Listing, Just Sold, Open House, Coming Soon, Price Drop, Testimonial) is the next phase per the brand roadmap.
+# REALTOR.ca DDF integration
+
+The live listing endpoint is implemented as a Cloudflare Pages Function at
+`functions/api/listings.js`. Configure these encrypted production secrets in
+Cloudflare Pages under **Settings > Variables and Secrets**:
+
+- `DDF_CLIENT_ID`, the DDF Destination username
+- `DDF_CLIENT_SECRET`, the DDF Destination password
+
+Never commit either value. The function uses OAuth 2.0 client credentials to
+request a short-lived server token, then maps the authorized DDF Property feed
+to the listing-card format used by the static site. If the function is not
+available during local/static development, the browser falls back to
+`data/listings.json`.
