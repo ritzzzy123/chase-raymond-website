@@ -106,21 +106,13 @@
     <div class="section-head">
       <div class="eyebrow">Featured</div>
       <h2>Current Listings</h2>
-      <p>My active listings, plus what's active across my office. Full list on the Listings page.</p>
+      <p>My active listings, updated automatically through REALTOR.ca DDF®. Full list on the Listings page.</p>
     </div>
 
-    <div class="tab-row">
-      <button class="tab-btn active" data-tab="mine">My Listings</button>
-      <button class="tab-btn" data-tab="office">Office Listings</button>
-    </div>
+    <div class="listings-notice">Listings are provided through REALTOR.ca DDF® and update automatically.</div>
 
-    <div class="listings-notice"><b>Sample data:</b> these cards are placeholders until live MLS/DDF integration is connected. See README for setup.</div>
-
-    <div class="tab-panel active" id="tab-mine">
+    <div id="tab-mine">
       <div id="home-listings" class="listing-grid"></div>
-    </div>
-    <div class="tab-panel" id="tab-office">
-      <div id="home-office-listings" class="listing-grid"></div>
     </div>
 
     <div style="margin-top:32px;">
@@ -221,17 +213,7 @@
 <script src="js/listings.js"></script>
 <script src="js/animations.js"></script>
 <script>
-  loadListings('#home-listings', { limit: 3, dataPath: 'data/listings.json' });
-  loadListings('#home-office-listings', { limit: 3, dataPath: 'data/office-listings.json' });
-
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
-    });
-  });
+  loadListings('#home-listings', { limit: 3 });
 </script>
 </body>
 </html>

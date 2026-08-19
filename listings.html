@@ -59,7 +59,7 @@
 <section class="alt reveal">
   <div class="wrap">
     <div class="listings-notice">
-      <b>Sample data:</b> the properties below are placeholders so the layout and filtering can be reviewed. Once DDF/API credentials are issued by your board, this grid pulls from the live feed automatically, see /js/listings.js and README.md for the swap-in point.
+      Listings are provided through REALTOR.ca DDF® and update automatically. Availability and property details are subject to change.
     </div>
 
     <div style="display:flex;gap:12px;margin-bottom:32px;flex-wrap:wrap;">
@@ -110,11 +110,13 @@
 <script>
   let allListingsData = [];
 
-  fetch('data/listings.json')
-    .then(res => res.json())
+  fetchListings('/api/listings')
     .then(data => {
       allListingsData = data.listings || [];
       renderFiltered('all');
+    })
+    .catch(() => {
+      document.querySelector('#all-listings').innerHTML = `<p style="color:#6B6B6B;">Listings couldn't be loaded right now.</p>`;
     });
 
   function renderFiltered(filter) {
