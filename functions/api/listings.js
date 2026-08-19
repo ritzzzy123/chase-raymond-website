@@ -65,7 +65,7 @@ async function getAccessToken(env) {
   return result.access_token;
 }
 
-export async function onRequestGet({ env }) {
+export async function handleListingsRequest(env) {
   if (!env.DDF_CLIENT_ID || !env.DDF_CLIENT_SECRET) {
     return json({ error: "DDF credentials are not configured" }, 503);
   }
@@ -88,4 +88,8 @@ export async function onRequestGet({ env }) {
     console.error("DDF listings error", error);
     return json({ error: "Live listings are temporarily unavailable" }, 502);
   }
+}
+
+export async function onRequestGet({ env }) {
+  return handleListingsRequest(env);
 }
